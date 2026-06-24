@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "983022215491",
+    "project_id": "chat-master-sk20",
+    "storage_bucket": "chat-master-sk20.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983022215491:android:f37d8e339eaf8ac90b0ff6",
+        "android_client_info": {
+          "package_name": "com.sk.chatmaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgA5RZlKLiUge2CPjyAqjBg1oKPfZ1VO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
