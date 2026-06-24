@@ -12,7 +12,12 @@
           "package_name": "com.sk.chatmaster"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "983022215491-d22bk3hg0pan8hcao9s7rkeso0c01ssd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAgA5RZlKLiUge2CPjyAqjBg1oKPfZ1VO0"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983022215491-d22bk3hg0pan8hcao9s7rkeso0c01ssd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

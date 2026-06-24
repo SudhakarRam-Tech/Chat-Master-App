@@ -1,4 +1,4 @@
-package com.sk.chatmaster
+package com.sk.chatmaster.ui.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
