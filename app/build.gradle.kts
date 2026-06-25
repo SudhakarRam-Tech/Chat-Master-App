@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.google.gms.google.services)
-
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -39,6 +40,11 @@ android {
     buildFeatures {
         compose = true
     }
+    /*sourceSets {
+        named("release") {
+            kotlin.directories.add("src/release/kotlin")
+        }
+    }*/
 }
 
 dependencies {
@@ -58,6 +64,22 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+
+    //navcontroller
+    implementation(libs.androidx.navigation)
+    //material icons
+    implementation(libs.androidx.material.icons)
+
+
+    // Hilt
+    implementation(libs.com.dagger.hilt.android)
+    ksp(libs.com.dagger.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+    //ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel)
+    // Kotlin Coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
 
 
 }
