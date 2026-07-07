@@ -1,5 +1,6 @@
 package com.sk.chatmaster.ui.Chat
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sk.chatmaster.core.common.Resource
@@ -74,7 +75,11 @@ class ChatViewModel @Inject constructor(private val getChatUseCase: GetChatUseCa
 
     private fun markAsRead() {
         viewModelScope.launch {
-            markMessagesReadUseCase(currentUid, otherUid)
+            when (val result = markMessagesReadUseCase.invoke(currentUid, otherUid)) {
+                is Resource.Error -> Log.e("Chat", "Mark read failed: ${result.message}")
+                else -> {}
+            }
+
         }
     }
 

@@ -10,6 +10,6 @@ class AppConfig {
         const val MESSAGES    = "messages"
         const val TIMESTAMP   = "timestamp"
         const val RECEIVER_ID = "receiverId"
-        const val IS_READ     = "isRead"
+        const val IS_READ     = "read"
     }
 }

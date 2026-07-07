@@ -25,7 +25,7 @@ fun AuthToggleSwitch(
 ) {
     // Styling constants matching the image
     val containerColor = Color(0xFFF1F2F6) // Dark gray track
-    val activeColor = Color(0xFFC6CDF8)
+    val activeColor = Color(0xFFA5BFF3)
     val inactiveTextColor = Color(0xFF002C49)
     val activeTextColor = Color(0xFF020F5D)
 
@@ -51,7 +51,7 @@ fun AuthToggleSwitch(
                 .offset(x = indicatorOffset)
                 .width(tabWidth)
                 .fillMaxHeight()
-                .background(activeColor, RoundedCornerShape(15.dp))
+                .background(activeColor, RoundedCornerShape(20.dp))
         )
 
         // Text Labels Row
@@ -65,7 +65,7 @@ fun AuthToggleSwitch(
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxHeight()
-                    .clip(RoundedCornerShape(15.dp))
+                    .clip(RoundedCornerShape(20.dp))
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null

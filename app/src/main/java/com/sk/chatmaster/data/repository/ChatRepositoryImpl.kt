@@ -3,7 +3,6 @@ package com.sk.chatmaster.data.repository
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.sk.chatmaster.core.common.AppConfig
 import com.sk.chatmaster.core.common.AppConfig.Companion.CHATS
 import com.sk.chatmaster.core.common.AppConfig.Companion.IS_READ
 import com.sk.chatmaster.core.common.AppConfig.Companion.MESSAGES
@@ -67,7 +66,7 @@ class ChatRepositoryImpl @Inject constructor( private val firestore: FirebaseFir
                 message     = message,
                 messageType = MessageType.TEXT,
                 timestamp   = Timestamp.now(),
-                isRead      = false
+                read      = false
             )
 
             msgRef.set(msg).await()
@@ -98,7 +97,7 @@ class ChatRepositoryImpl @Inject constructor( private val firestore: FirebaseFir
                 audioUrl      = audioUrl,
                 audioDuration = audioDuration,
                 timestamp     = Timestamp.now(),
-                isRead        = false
+                read        = false
             )
             msgRef.set(msg).await()
             Resource.Success(Unit)
@@ -116,9 +115,10 @@ class ChatRepositoryImpl @Inject constructor( private val firestore: FirebaseFir
                 .document(chatId)
                 .collection(MESSAGES)
                 .whereEqualTo(RECEIVER_ID,currentUserId)
-                .whereEqualTo(AppConfig.IS_READ,false)
+                .whereEqualTo(IS_READ,false)
                 .get()
                 .await()
+
             val batch = firestore.batch()
             unread.documents.forEach { doc ->
                 batch.update(doc.reference, IS_READ, true)

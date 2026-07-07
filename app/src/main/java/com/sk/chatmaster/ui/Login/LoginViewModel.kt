@@ -31,7 +31,7 @@ class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase,
             is AuthUIEvent.EmailChanged -> _loginState.update { state ->
                 state.copy(email = event.value)
             }
-            is AuthUIEvent.PassworkdChaned -> _loginState.update {
+            is AuthUIEvent.PasswordChaned -> _loginState.update {
                 state -> state.copy(password = event.value)
             }
             is AuthUIEvent.SetSignUp -> _loginState.update { state ->
@@ -52,7 +52,7 @@ class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase,
             is AuthUIEvent.EmailChanged -> _loginState.update { state ->
                 state.copy(email = event.value)
             }
-            is AuthUIEvent.PassworkdChaned -> _loginState.update { state ->
+            is AuthUIEvent.PasswordChaned -> _loginState.update { state ->
                 state.copy(password = event.value)
             }
             is AuthUIEvent.MobileChanged -> _loginState.update { state ->
@@ -61,6 +61,10 @@ class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase,
             is AuthUIEvent.submitOnClick -> signUpSubmit()
             is AuthUIEvent.SetSignUp -> _loginState.update { state ->
                 state.copy(isSignUp = event.value)
+            }
+
+            is AuthUIEvent.ConfirmPasswordChaned -> _loginState.update { state ->
+                state.copy(confirmPassword = event.value)
             }
         }
     }
@@ -101,9 +105,16 @@ class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase,
             loginState.password.isNullOrEmpty() -> errorMsg = "Password is required"
             loginState.password.length < 5 -> errorMsg = "Invalid password"
 
+
+            loginState.confirmPassword.isNullOrEmpty() -> errorMsg = "Confirm Password is required"
+            loginState.confirmPassword.length < 5 -> errorMsg = "Invalid confirm password"
+
             loginState.mobile.isNullOrBlank() -> errorMsg = "Mobile Number is required"
             loginState.mobile.length < 10 -> errorMsg = "Invalid Mobile Number"
 
+            !loginState.password.equals(loginState.confirmPassword) -> {
+                errorMsg = "Password mismatch"
+            }
             else -> {
                 errorMsg = null
             }
@@ -192,7 +203,8 @@ class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase,
 sealed class AuthUIEvent {
     data class NameChanged(val value : String) : AuthUIEvent()
     data class EmailChanged(val value : String) : AuthUIEvent()
-    data class PassworkdChaned(val value : String) : AuthUIEvent()
+    data class PasswordChaned(val value : String) : AuthUIEvent()
+    data class ConfirmPasswordChaned(val value : String) : AuthUIEvent()
     data class MobileChanged(val value : String) : AuthUIEvent()
     data class SetSignUp(val value : Boolean) : AuthUIEvent()
     object submitOnClick : AuthUIEvent()

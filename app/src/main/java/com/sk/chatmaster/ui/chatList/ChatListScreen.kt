@@ -1,5 +1,6 @@
 package com.sk.chatmaster.ui.chatList
 
+import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -20,6 +21,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -27,13 +31,19 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -72,13 +82,13 @@ fun ChatListScreen(navController: NavController?,
         ChatUser("sdfjasjdfjsdflj","Varatharaj","sudhakar@gmail.com","9095655761","","",""))*/
     // Trigger fetch once when the screen is first shown (or when uid changes)
     viewModel.loadChatUsers(AppConfig.UID)
-
+    var searchQry by remember { mutableStateOf("") }
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
                     Text(text = "Chats",
-                        fontSize = 24.sp,
+                        fontSize = 20.sp,
                         fontWeight = FontWeight.Bold)
                 },
                 navigationIcon = {
@@ -132,24 +142,60 @@ fun ChatListScreen(navController: NavController?,
                     }
                 }
                 is ChatUserListUiState.Success -> {
-                    if (state.userList.isEmpty()) {
-                        Text(
-                            text = "No chat users found.",
-                            modifier = Modifier.align(Alignment.Center),
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    } else {
-                        LazyColumn(Modifier
-                            .padding(16.dp)
-                            .fillMaxSize(),
-                            verticalArrangement = Arrangement.spacedBy(16.dp),
-                            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
-                        ) {
-                            items(state.userList) { chat ->
-                                //chatItem(chat,onClick = { onUserClick(chat.uid,chat.name) })
-                                chatItem(chat,navController/*,onClick = {
+                    Column(
+                        modifier = Modifier.align(Alignment.Center)) {
+                        if (state.userList.isEmpty()) {
+                            Text(
+                                text = "No chat users found.",
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        } else {
+
+                            val filteredUsers = remember(searchQry, state.userList) {
+                                if(searchQry.isBlank()) {
+                                    state.userList
+                                } else {
+                                    state.userList.filter { user ->
+                                        user.name.contains(searchQry, ignoreCase = true)
+                                                || user.mobile?.contains(searchQry, ignoreCase = true) == true
+                                                || user.email?.contains(searchQry, ignoreCase = true) == true
+                                    }
+                                }
+                            }
+                            OutlinedTextField(value = searchQry,
+                                onValueChange = {search ->
+                                    searchQry = search
+                                },
+                                modifier = Modifier.fillMaxWidth().padding(12.dp,8.dp),
+                                leadingIcon = {
+                                    Icon(imageVector = Icons.Default.Search,
+                                        contentDescription = null)
+                                },
+                                placeholder = {
+                                    Text("Search")
+                                },
+                                shape = RoundedCornerShape(28.dp),
+                                singleLine = true,
+                                colors = TextFieldDefaults.colors(
+                                    focusedContainerColor = Color(0xFFFFFFFF),
+                                    //unfocusedTextColor = Color(0xFFF2F2F2),
+                                    disabledContainerColor = Color(0xFFFFFFFF),
+
+                                    focusedIndicatorColor = Color.Transparent,
+                                    unfocusedIndicatorColor = Color.Transparent,
+                                    disabledIndicatorColor = Color.Transparent
+                                ))
+                            LazyColumn(Modifier
+                                .fillMaxSize(),
+                                verticalArrangement = Arrangement.spacedBy(16.dp),
+                                contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
+                            ) {
+                                items(filteredUsers) { chat ->
+                                    //chatItem(chat,onClick = { onUserClick(chat.uid,chat.name) })
+                                    chatItem(chat,navController/*,onClick = {
                                     navController?.navigate(ChatScreen(navController,
                                     AppConfig.UID,chat.uid,chat.name)) }*/)
+                                }
                             }
                         }
                     }
@@ -170,16 +216,17 @@ fun chatItem(chatUser: ChatUser/*, onClick: () -> Unit = {}*/,navController: Nav
             containerColor = Color.White,
         ),
     ) {
-        Row(modifier = Modifier.fillMaxWidth().padding(16.dp),
+        Row(modifier = Modifier.fillMaxWidth().padding(16.dp,12.dp)
+            .clickable { navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}") },
             verticalAlignment = Alignment.CenterVertically) {
             if (chatUser.icon.isNullOrEmpty()) {
                 Box(
                     modifier = Modifier
-                        .size(56.dp)
+                        .size(48.dp)
                         .background(Blue40, RoundedCornerShape(30.dp))
                 ) {
                     Text(text = chatUser.name!!.first().toString(),
-                        fontSize = 32.sp,
+                        fontSize = 28.sp,
                         fontWeight = FontWeight.Bold,
                         fontFamily = FontFamily.Serif,
                         modifier = Modifier.align(Alignment.Center),
@@ -190,33 +237,33 @@ fun chatItem(chatUser: ChatUser/*, onClick: () -> Unit = {}*/,navController: Nav
                 Image(
                     painter = painterResource(id = R.drawable.ic_signup),
                     contentDescription = "User Image",
-                    modifier = Modifier.size(60.dp)
+                    modifier = Modifier.size(48.dp)
                 )
             }
             Spacer(modifier = Modifier.width(16.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = chatUser.name!!,
-                    fontSize = 18.sp,
+                    fontSize = 14.sp,
                     fontWeight = FontWeight.SemiBold,
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = chatUser.mobile!!,
-                    fontSize = 14.sp,
+                    fontSize = 10.sp,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                     lineHeight = 18.sp
                 )
             }
-            Spacer(modifier = Modifier.width(12.dp))
+            /*Spacer(modifier = Modifier.width(12.dp))
             Column(horizontalAlignment = Alignment.End,
                 verticalArrangement = Arrangement.Top) {
                 Text(
                     text = "5 mins",
                     fontSize = 8.sp,
                 )
-                /*Box(modifier = Modifier
+                *//*Box(modifier = Modifier
                     .background(toolBarBackground, RoundedCornerShape(8.dp))
                     .padding(horizontal = 10.dp, vertical = 10.dp)) {
                     Text(
@@ -225,13 +272,14 @@ fun chatItem(chatUser: ChatUser/*, onClick: () -> Unit = {}*/,navController: Nav
                         color = Color.White
                     )
 
-                }*/
+                }*//*
                 Box(modifier = Modifier.height(30.dp))
-            }
+            }*/
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview(showBackground = true)
 @Composable
 fun showPreview() {
@@ -243,14 +291,42 @@ fun showPreview() {
         ChatUser("sdfjasjdfjsdflj","Karthik","sudhakar@gmail.com","9095655761","","",""),
         ChatUser("sdfjasjdfjsdflj","Ramamoorthy","sudhakar@gmail.com","9095655761","","",""),
         ChatUser("sdfjasjdfjsdflj","Varatharaj","sudhakar@gmail.com","9095655761","","",""))
-    LazyColumn(Modifier
-        .padding(16.dp)
-        .fillMaxSize(),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
-        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
-    ) {
-        items(userList) { chat ->
-            chatItem(chat,null)
+    Column() {
+        var searchQry by remember { mutableStateOf("") }
+        OutlinedTextField(value = searchQry,
+            onValueChange = {search ->
+                searchQry = search
+            },
+            modifier = Modifier.fillMaxWidth().padding(12.dp),
+            leadingIcon = {
+                Icon(imageVector = Icons.Default.Search,
+                    contentDescription = null)
+            },
+            placeholder = {
+                Text("Search")
+            },
+            shape = RoundedCornerShape(28.dp),
+            singleLine = true,
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Color(0xFFFFFFFF),
+                //unfocusedTextColor = Color(0xFFF2F2F2),
+                disabledContainerColor = Color(0xFFFFFFFF),
+
+                focusedIndicatorColor = Color(0xFFFFFFFF),
+                unfocusedIndicatorColor = Color(0xFFFFFFFF),
+                disabledIndicatorColor = Color(0xFFFFFFFF)
+            ))
+        val filterList = userList.filter { user ->
+            user.name.contains(searchQry, ignoreCase = true)
+        }
+        LazyColumn(Modifier
+            .fillMaxSize().padding(8.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
+        ) {
+            items(filterList) { chat ->
+                chatItem(chat,null)
+            }
         }
     }
     //ChatListScreen(null)

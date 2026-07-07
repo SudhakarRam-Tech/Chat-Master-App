@@ -27,7 +27,7 @@ data class Message(
     val audioUrl: String? = null,
     val audioDuration: String? = null,
     val timestamp: Timestamp? = null,
-    val isRead: Boolean = false
+    val read: Boolean = false
 )
 
 object MessageType {

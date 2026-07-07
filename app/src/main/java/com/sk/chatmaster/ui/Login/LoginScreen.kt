@@ -1,6 +1,7 @@
 package com.sk.chatmaster.ui.Login
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -10,8 +11,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Login
@@ -24,6 +27,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -35,10 +39,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -53,6 +59,7 @@ import com.sk.chatmaster.core.common.AppEmailTextField
 import com.sk.chatmaster.core.common.AppOutlinedTextField
 import com.sk.chatmaster.core.common.AppPasswordTextField
 import com.sk.chatmaster.core.common.AppPhoneTextField
+import com.sk.chatmaster.ui.theme.Blue40
 import com.sk.chatmaster.ui.widget.StatusDialog
 
 val containerColor = Color(0xFFFFFFFF) // Dark gray track
@@ -63,6 +70,8 @@ fun LoginScreen(navController: NavController?) {
     val dialogState by loginViewModel.dialogState.collectAsStateWithLifecycle()
 
     val snackbarHostState = remember { SnackbarHostState() }
+    val focusManager = LocalFocusManager.current
+    val scrollState : ScrollState = rememberScrollState()
 
     LaunchedEffect(authState.error) {
         authState.error?.let {
@@ -71,9 +80,8 @@ fun LoginScreen(navController: NavController?) {
             loginViewModel.clearError()
         }
     }
-    if (authState.isLoading) {
-        CircularProgressComponent()
-    }
+
+
     StatusDialog(
         dialogState,
         onDismiss = { route ->
@@ -88,18 +96,27 @@ fun LoginScreen(navController: NavController?) {
             }
         })
 
-    Box(modifier = Modifier.fillMaxSize()
-        .padding(16.dp).background(containerColor),
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(containerColor)
+        .verticalScroll(scrollState),
         contentAlignment = Alignment.Center,) {
         var nameText by remember { mutableStateOf("") }
         var emailText by remember { mutableStateOf("") }
         var passwordText by remember { mutableStateOf("") }
         var mobileNumText by remember { mutableStateOf("") }
         var isSignUp by remember { mutableStateOf(false) }
-
         val emailTextRequester = remember { FocusRequester() }
 
-        Column() {
+        SnackbarHost(hostState = snackbarHostState,
+            modifier = Modifier.align(Alignment.BottomCenter))
+
+        if (authState.isLoading) {
+            CircularProgressComponent()
+        }
+
+        Column(Modifier
+            .padding(16.dp)) {
             /*Image(
                 painter = painterResource(id = R.drawable.ic_signup),
                 contentDescription = "Login",
@@ -113,9 +130,11 @@ fun LoginScreen(navController: NavController?) {
 
             )*/
             Image(
-                painter = painterResource(id = R.drawable.ic_signup),
+                painter = painterResource(id = R.drawable.ic_account),
                 contentDescription = "Login",
-                modifier = Modifier.size(70.dp).align(Alignment.CenterHorizontally)
+                modifier = Modifier
+                    .size(80.dp)
+                    .align(Alignment.CenterHorizontally)
             )
             AuthToggleSwitch(
                 isSignUpSelected = authState.isSignUp,
@@ -139,11 +158,23 @@ fun LoginScreen(navController: NavController?) {
                         }
                     )
                 )
+                Spacer(Modifier.size(8.dp))
+                AppPhoneTextField(modifier = Modifier.fillMaxWidth(),
+                    value = authState.mobile ?: "",
+                    onValueChange = { mobileNum ->
+                        //mobileNumText = mobileNum
+                        loginViewModel.registerEvent(AuthUIEvent.MobileChanged(mobileNum))
+                    },
+                    label = "Mobile",
+                    leadingIcon = Icons.Default.PhoneAndroid,
+                    imeAction = ImeAction.Next,
+                )
+                Spacer(Modifier.size(8.dp))
             }
-
             AppEmailTextField(
-                modifier = Modifier.fillMaxWidth().
-                focusRequester(emailTextRequester),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .focusRequester(emailTextRequester),
                 value = authState.email ?: "",
                 onValueChange = {loginViewModel.registerEvent(AuthUIEvent.EmailChanged(it))},
                 label = "Email",
@@ -156,25 +187,33 @@ fun LoginScreen(navController: NavController?) {
                 value = authState.password ?: "",
                 label = "Password",
                 onValueChange = { password ->
-                    loginViewModel.registerEvent(AuthUIEvent.PassworkdChaned(password))
+                    loginViewModel.registerEvent(AuthUIEvent.PasswordChaned(password))
                 },
                 leadingIcon = Icons.Default.Password,
-                imeAction = ImeAction.Next,
+                imeAction = if (authState.isSignUp) ImeAction.Next else ImeAction.Done,
+                keyboardActions = KeyboardActions (
+                    onDone = {
+                        focusManager.clearFocus()
+                        if (!authState.isSignUp)//login
+                            loginViewModel.loginEvent(AuthUIEvent.submitOnClick)
+                    }
+                )
             )
             if (authState.isSignUp) {
                 Spacer(Modifier.size(8.dp))
-                AppPhoneTextField(modifier = Modifier.fillMaxWidth(),
-                    value = authState.mobile ?: "",
-                    onValueChange = { mobileNum ->
-                                    //mobileNumText = mobileNum
-                        loginViewModel.registerEvent(AuthUIEvent.MobileChanged(mobileNum))
+                AppPasswordTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    value = authState.confirmPassword ?: "",
+                    label = "Confirm Password",
+                    onValueChange = { confirmPass ->
+                        loginViewModel.registerEvent(AuthUIEvent.ConfirmPasswordChaned(confirmPass))
                     },
-                    label = "Mobile",
-                    leadingIcon = Icons.Default.PhoneAndroid,
+                    leadingIcon = Icons.Default.Password,
                     imeAction = ImeAction.Done,
                     keyboardActions = KeyboardActions(
                         onDone = {
-                            //
+                            focusManager.clearFocus()
+                            loginViewModel.registerEvent(AuthUIEvent.submitOnClick)
                         }
                     )
                 )
@@ -182,8 +221,10 @@ fun LoginScreen(navController: NavController?) {
             Spacer(modifier = Modifier.size(20.dp))
             Button(
                 shape = RoundedCornerShape(10.dp),
-                modifier = Modifier.size(140.dp,48.dp).
-                align(Alignment.CenterHorizontally),
+                modifier = Modifier
+                    .size(140.dp, 48.dp)
+                    .align(Alignment.CenterHorizontally),
+                colors = ButtonDefaults.buttonColors(Blue40),
                 onClick = {
                     if (authState.isSignUp) {
                         loginViewModel.registerEvent(AuthUIEvent.submitOnClick)
@@ -221,7 +262,9 @@ fun CircularProgressComponent() {
         // we are using column to align our
         // imageview to center of the screen.
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .background(Color.White)
+            .alpha(0.5f),
 
         // below line is used for specifying
         // vertical arrangement.
@@ -242,7 +285,7 @@ fun CircularProgressComponent() {
 
             // below line is used to add color
             // to our progress bar.
-            color = Color.Blue,
+            color = Blue40,
 
             // below line is used to add stroke
             // width to our progress bar.

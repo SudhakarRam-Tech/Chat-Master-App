@@ -21,11 +21,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Done
+import androidx.compose.material.icons.filled.DoneAll
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Send
-import androidx.compose.material.icons.filled.SentimentSatisfied
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -59,6 +59,8 @@ import com.sk.chatmaster.core.common.AppConfig
 import com.sk.chatmaster.data.model.Message
 import com.sk.chatmaster.data.model.MessageType
 import com.sk.chatmaster.ui.Login.CircularProgressComponent
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 private val BubbleSent     = Color(0xFF6C63FF)   // purple — sent messages
 private val BubbleReceived = Color(0xFFFFFFFF)   // white  — received messages
@@ -90,10 +92,12 @@ fun ChatScreen(navController : NavController?,
             if (count > 0) listState.animateScrollToItem(count - 1)
         }
     }
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     Scaffold(
         containerColor = ScreenBg,
         topBar = {
             TopAppBar(
+                scrollBehavior = scrollBehavior,
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = TopBarBg),
                 navigationIcon = {
                     IconButton(onClick = { navController?.popBackStack() }) {
@@ -154,7 +158,8 @@ fun ChatScreen(navController : NavController?,
                         state           = listState,
                         modifier        = Modifier.fillMaxSize(),
                         contentPadding  = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
-                        verticalArrangement = Arrangement.spacedBy(6.dp)
+                        verticalArrangement = Arrangement.spacedBy(6.dp),
+                        //reverseLayout = true
                     ) {
                         // Date header
                         item {
@@ -184,13 +189,13 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
     )
     else
         RoundedCornerShape(topStart = 0.dp,  topEnd = 14.dp,  bottomStart = 14.dp, bottomEnd = 14.dp)
-    val msgPadding = if (isSentFlag) PaddingValues(start = 20.dp,top = 10.dp,end = 20.dp, bottom = 2.dp)
+    val msgPadding = if (isSentFlag) PaddingValues(start = 10.dp,top = 5.dp,end = 10.dp, bottom = 2.dp)
         else
-            PaddingValues(start = 20.dp,top = 10.dp,end = 20.dp, bottom = 2.dp)
+            PaddingValues(start = 10.dp,top = 5.dp,end = 10.dp, bottom = 2.dp)
 
-    val readTimePadding = if (isSentFlag) PaddingValues(start = 3.dp,top = 3.dp,end = 20.dp, bottom = 5.dp)
+    val readTimePadding = if (isSentFlag) PaddingValues(start = 3.dp,top = 3.dp,end = 10.dp, bottom = 5.dp)
     else
-        PaddingValues(start = 3.dp,top = 3.dp,end = 20.dp, bottom = 5.dp)
+        PaddingValues(start = 3.dp,top = 3.dp,end = 10.dp, bottom = 5.dp)
 
     Column(
         modifier            = Modifier.fillMaxWidth(),
@@ -208,7 +213,7 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
                     Text(
                         text      = message.message,
                         color     = textColor,
-                        fontSize  = 15.sp,
+                        fontSize  = 14.sp,
                         lineHeight = 20.sp,
                         modifier = Modifier.padding(msgPadding)
                     )
@@ -224,18 +229,29 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
 
             Row(modifier = Modifier.align(AbsoluteAlignment.Right).padding(readTimePadding)) {
                 Text(
-                    text      = "10.pm",
+                    text      = message.timestamp?.toDate()?.let {
+                        SimpleDateFormat("h:mm a", Locale.getDefault()).format(it)
+                    } ?: "",
                     color     = textColor,
                     fontSize  = 10.sp,
-                    modifier = Modifier.padding(3.dp,3.dp)
+                    modifier = Modifier.padding(3.dp,0.dp)
                 )
                 Spacer(Modifier.width(5.dp))
-                Icon(
-                    imageVector        = Icons.Default.Done,
-                    contentDescription = "Read",
-                    tint               = if (isSentFlag) Color.White else textColor,
-                    modifier           = Modifier.size(18.dp)
-                )
+                if (isSentFlag && message.read) {
+                    Icon(
+                        imageVector = if (message.read) Icons.Default.DoneAll else Icons.Default.Done,
+                        contentDescription = if (message.read) "Read" else "Sent",
+                        tint = if (message.read) Color(0xFF34B7F1) else Color.White, // blue tick style
+                        modifier = Modifier.size(18.dp)
+                    )
+                } else {
+                    Icon(
+                        imageVector        = Icons.Default.Done,
+                        contentDescription = "Read",
+                        tint               = if (isSentFlag) Color.White else textColor,
+                        modifier           = Modifier.size(14.dp)
+                    )
+                }
             }
             //Spacer(modifier = Modifier.height(10.dp))
     }
@@ -288,12 +304,12 @@ private fun AudioBubble(duration: String, textColor: Color, isSent: Boolean, pad
 @Preview(showBackground = true)
 @Composable
 fun showPreview() {
-    val messages = listOf(Message("sdfasdf","123","321",message = "Hi Sudhakar", messageType = MessageType.TEXT, isRead = true),
-        Message("gsdf","321","123",message = "Hi Sudhakar", messageType = MessageType.TEXT, isRead = true),
-                Message("dffgg","123","321",message = "Today We have a meeting", messageType = MessageType.TEXT, isRead = true),
-        Message("llj","321","123",message = "Tell me the timing", messageType = MessageType.TEXT, isRead = true),
-        Message("eoiut","123","321",message = "Around 10 PM", messageType = MessageType.TEXT, isRead = true),
-        Message("eoiut","123","321", audioUrl = "Textsdfasdfasdfasdsdf",audioDuration = "2 Mins", messageType = MessageType.AUDIO, isRead = true),)
+    val messages = listOf(Message("sdfasdf","123","321",message = "Hi Mathu", messageType = MessageType.TEXT, read = true),
+        Message("gsdf","321","123",message = "Hello Sudhakar", messageType = MessageType.TEXT, read = true),
+                Message("dffgg","123","321",message = "Today We have a meeting", messageType = MessageType.TEXT, read = true),
+        Message("llj","321","123",message = "Tell me the timing", messageType = MessageType.TEXT, read = true),
+        Message("eoiut","123","321",message = "Around 10 PM", messageType = MessageType.TEXT, read = true),
+        Message("eoiut","123","321", audioUrl = "Textsdfasdfasdfasdsdf",audioDuration = "2 Mins", messageType = MessageType.AUDIO, read = true),)
     Column() {
         LazyColumn(
             modifier        = Modifier
@@ -317,6 +333,7 @@ fun showPreview() {
             "",
             onValueChange = {},
             onSendClick = {
+
             },) {
 
         }
@@ -362,7 +379,7 @@ private fun ChatInputBar(
             verticalAlignment = Alignment.CenterVertically
         ) {
             // Add attachment button
-            Box(
+            /*Box(
                 modifier         = Modifier
                     .size(36.dp)
                     .clip(CircleShape)
@@ -377,7 +394,7 @@ private fun ChatInputBar(
                 )
             }
 
-            Spacer(Modifier.width(8.dp))
+            Spacer(Modifier.width(8.dp))*/
 
             OutlinedTextField(
                 value         = value,
