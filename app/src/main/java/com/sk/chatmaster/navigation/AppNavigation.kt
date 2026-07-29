@@ -17,30 +17,35 @@ import com.sk.chatmaster.ui.Login.LoginScreen
 fun AppNavigation(contentPadding : PaddingValues) {
     // 1. Initialize the NavController
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Route.LoginScreen,
+    NavHost(
+        navController = navController,
+        startDestination = Route.LoginScreen,
         modifier = Modifier.padding(contentPadding),
         builder = {
             composable(route = Route.LoginScreen) {
-                LoginScreen(navController)
+                LoginScreen(navController = navController)
             }
             composable(route = Route.ChatListScreen) {
-                ChatListScreen(navController, onUserClick = { receiverID, receiverName ->
+                ChatListScreen(navController = navController, onUserClick = { receiverID, receiverName ->
                     navController.navigate("ChatScreen/${receiverID}/${receiverName}")
                 })
             }
-            composable(route = Route.ChatScreen,
+            composable(
+                route = Route.ChatScreen,
                 arguments = listOf(
                     navArgument("receiverId") { type = NavType.StringType },
                     navArgument("receiverName") { type = NavType.StringType }
-                )) { backStackEntry ->
+                )
+            ) { backStackEntry ->
                 // Extract parameters safely
                 val receiverId = backStackEntry.arguments?.getString("receiverId").orEmpty()
                 val receiverName = backStackEntry.arguments?.getString("receiverName").orEmpty()
 
                 ChatScreen(
-                    navController,receiverId =  receiverId,
+                    navController, receiverId =  receiverId,
                     receiverName = receiverName,
                 )
             }
-        })
+        }
+    )
 }

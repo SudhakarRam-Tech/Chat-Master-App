@@ -1,6 +1,7 @@
 [versions]
 agp = "9.2.1"
 coreKtx = "1.18.0"
+detekt = "0.0.26"
 junit = "4.13.2"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
@@ -18,9 +19,15 @@ hiltCompose = "1.2.0"
 lifecycleViewmodel = "2.9.2"
 coroutine = "1.8.1"
 ktlintVer = "12.1.1"
+detektVer = "1.23.8"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+
+detekt = { module = "com.twitter.compose.rules:detekt", version.ref = "detekt" }
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detektVer" }
+detekt-rules-libraries = { module = "io.gitlab.arturbosch.detekt:detekt-rules-libraries", version.ref = "detektVer" }
+
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -63,3 +70,4 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "devtoolsKsp"}
 #this is for linting kotlin code
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintVer"}
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektVer"}

@@ -1,0 +1,639 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ArgumentListWrapping:AppNavigation.kt$( navController, receiverId = receiverId, receiverName = receiverName, )</ID>
+    <ID>ArgumentListWrapping:BottomSheetDialog.kt$(onClick = {}, modifier = Modifier.width(120.dp), shape = RoundedCornerShape(8.dp), border = BorderStroke(1.dp, Blue40) )</ID>
+    <ID>ArgumentListWrapping:BottomSheetDialog.kt$(painterResource(R.drawable.ic_success), contentDescription = "Status", modifier = Modifier.size(120.dp))</ID>
+    <ID>ArgumentListWrapping:BottomSheetDialog.kt$(text = "Done", fontSize = 14.sp, fontWeight = FontWeight.SemiBold)</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$( ChatUser("sdfjasjdfjsdflj","Vijay","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Mathu","sudhakar@gmail.com","9095655761","","",""), ChatUser( "sdfjasjdfjsdflj","Tamizhan","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Baskaran","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Karthik","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Ramamoorthy","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Varatharaj","sudhakar@gmail.com","9095655761","","",""))</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$( modifier = Modifier.align(Alignment.Center))</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$( onClick = {}, indication = null, interactionSource = remember { MutableInteractionSource() })</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(Modifier .fillMaxSize() .padding(8.dp), verticalArrangement = Arrangement.spacedBy(16.dp), contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp), )</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(Modifier .fillMaxSize(), verticalArrangement = Arrangement.spacedBy(16.dp), contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp), )</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(imageVector = Icons.Default.Search, contentDescription = null)</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(modifier = Modifier .fillMaxHeight() .clickable( onClick = {}, indication = null, interactionSource = remember { MutableInteractionSource() }), contentAlignment = Alignment.Center)</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(modifier = Modifier .fillMaxSize() .padding(paddingValues = innerPadding))</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(modifier = Modifier .fillMaxWidth() .clickable { onUserClick(chatUser.uid,chatUser.name) //navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}") }, elevation = CardDefaults.cardElevation( defaultElevation = 6.dp ), colors = CardDefaults.cardColors( containerColor = Color.White, ), )</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(modifier = Modifier .fillMaxWidth() .padding(16.dp, 12.dp) /*.clickable { navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}") }*/, verticalAlignment = Alignment.CenterVertically)</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(text = "Chats", fontSize = 20.sp, fontWeight = FontWeight.Bold)</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(text = chatUser.name!!.first().toString(), fontSize = 28.sp, fontWeight = FontWeight.Bold, fontFamily = FontFamily.Serif, modifier = Modifier.align(Alignment.Center), color = Color.White, )</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(value = searchQry, onValueChange = {search -&gt; searchQry = search }, modifier = Modifier .fillMaxWidth() .padding(12.dp), leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) }, placeholder = { Text("Search") }, shape = RoundedCornerShape(28.dp), singleLine = true, colors = TextFieldDefaults.colors( focusedContainerColor = Color(0xFFFFFFFF), //unfocusedTextColor = Color(0xFFF2F2F2), disabledContainerColor = Color(0xFFFFFFFF), focusedIndicatorColor = Color(0xFFFFFFFF), unfocusedIndicatorColor = Color(0xFFFFFFFF), disabledIndicatorColor = Color(0xFFFFFFFF) ))</ID>
+    <ID>ArgumentListWrapping:ChatListScreen.kt$(value = searchQry, onValueChange = {search -&gt; searchQry = search }, modifier = Modifier .fillMaxWidth() .padding(12.dp, 8.dp), leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) }, placeholder = { Text("Search") }, shape = RoundedCornerShape(28.dp), singleLine = true, colors = TextFieldDefaults.colors( focusedContainerColor = Color(0xFFFFFFFF), //unfocusedTextColor = Color(0xFFF2F2F2), disabledContainerColor = Color(0xFFFFFFFF), focusedIndicatorColor = Color.Transparent, unfocusedIndicatorColor = Color.Transparent, disabledIndicatorColor = Color.Transparent ))</ID>
+    <ID>ArgumentListWrapping:ChatScreen.kt$( "", onValueChange = {}, onSendClick = { },)</ID>
+    <ID>ArgumentListWrapping:ChatScreen.kt$( Message("sdfasdf","123","321",message = "Hi Mathu", messageType = MessageType.TEXT, read = true), Message("gsdf","321","123",message = "Hello Sudhakar", messageType = MessageType.TEXT, read = true), Message("dffgg","123","321",message = "Have you made any plans for the weekend dsfasfd asfasdf sdfasf dfadsf?", messageType = MessageType.TEXT, read = true), Message("llj","321","123",message = "Tell me the timing", messageType = MessageType.TEXT, read = true), Message("eoiut","123","321",message = "Around 10 PM", messageType = MessageType.TEXT, read = true), Message("eoiut","123","321", audioUrl = "Textsdfasdfasdfasdsdf",audioDuration = "2 Mins", messageType = MessageType.AUDIO, read = true),)</ID>
+    <ID>ArgumentListWrapping:ChatScreen.kt$( verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(paddingValues))</ID>
+    <ID>ArgumentListWrapping:ChatScreen.kt$("dffgg","123","321",message = "Have you made any plans for the weekend dsfasfd asfasdf sdfasf dfadsf?", messageType = MessageType.TEXT, read = true)</ID>
+    <ID>ArgumentListWrapping:ChatScreen.kt$("eoiut","123","321", audioUrl = "Textsdfasdfasdfasdsdf",audioDuration = "2 Mins", messageType = MessageType.AUDIO, read = true)</ID>
+    <ID>ArgumentListWrapping:LoginScreen.kt$( dialogState, onDismiss = { route -&gt; loginViewModel.dismissDialog() // 2. Safely check flag and trigger navigation if (!route.isNullOrEmpty()) { navController?.navigate(route) { // Optional: Clear backstack so user cannot back into the dialog flow popUpTo("LoginScreen") { inclusive = true } } } })</ID>
+    <ID>ArgumentListWrapping:LoginScreen.kt$(Modifier .padding(16.dp))</ID>
+    <ID>ArgumentListWrapping:LoginScreen.kt$(hostState = snackbarHostState, modifier = Modifier.align(Alignment.BottomCenter))</ID>
+    <ID>ArgumentListWrapping:LoginScreen.kt$(it, duration = SnackbarDuration.Short)</ID>
+    <ID>ArgumentListWrapping:LoginScreen.kt$(modifier = Modifier .fillMaxSize() .background(containerColor) .verticalScroll(scrollState), contentAlignment = Alignment.Center,)</ID>
+    <ID>ArgumentListWrapping:LoginScreen.kt$(modifier = Modifier.fillMaxWidth(), value = authState.mobile ?: "", onValueChange = { mobileNum -&gt; //mobileNumText = mobileNum loginViewModel.registerEvent(AuthUIEvent.MobileChanged(mobileNum)) }, label = "Mobile", leadingIcon = Icons.Default.PhoneAndroid, imeAction = ImeAction.Next, )</ID>
+    <ID>ArgumentListWrapping:LoginViewModel.kt$LoginViewModel$(name = state.name!!, email = state.email!!, password = state.password!!, mobile = state.mobile!!)</ID>
+    <ID>ArgumentListWrapping:StatusDialog.kt$(DialogState.Success("Account Created Successfully"), onDismiss = { })</ID>
+    <ID>BlockCommentInitialStarAlignment:ChatListScreen.kt$/*Spacer(modifier = Modifier.width(12.dp)) Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.Top) { Text( text = "5 mins", fontSize = 8.sp, ) */</ID>
+    <ID>BlockCommentInitialStarAlignment:Theme.kt$/* Other default colors to override background = Color(0xFFFFFBFE), surface = Color(0xFFFFFBFE), onPrimary = Color.White, onSecondary = Color.White, onTertiary = Color.White, onBackground = Color(0xFF1C1B1F), onSurface = Color(0xFF1C1B1F), */</ID>
+    <ID>BlockCommentInitialStarAlignment:Type.kt$/* Other default text styles to override titleLarge = TextStyle( fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 22.sp, lineHeight = 28.sp, letterSpacing = 0.sp ), labelSmall = TextStyle( fontFamily = FontFamily.Default, fontWeight = FontWeight.Medium, fontSize = 11.sp, lineHeight = 16.sp, letterSpacing = 0.5.sp ) */</ID>
+    <ID>ChainWrapping:ChatListScreen.kt$||</ID>
+    <ID>CognitiveComplexMethod:AppTextField.kt$@Composable fun AppOutlinedTextField( value: String, onValueChange: (String) -&gt; Unit, modifier: Modifier = Modifier, label: String? = null, placeholder: String? = null, leadingIcon: ImageVector? = null, trailingIcon: ImageVector? = null, onTrailingIconClick: (() -&gt; Unit)? = null, isPassword: Boolean = false, capitalization: KeyboardCapitalization = KeyboardCapitalization.None, keyboardType: KeyboardType = KeyboardType.Text, imeAction: ImeAction = ImeAction.Next, keyboardActions: KeyboardActions = KeyboardActions.Default, isError: Boolean = false, errorMessage: String? = null, supportingText: String? = null, enabled: Boolean = true, readOnly: Boolean = false, singleLine: Boolean = true, maxLines: Int = if (singleLine) 1 else Int.MAX_VALUE, shape: Shape = RoundedCornerShape(8.dp), colors: TextFieldColors = OutlinedTextFieldDefaults.colors(), )</ID>
+    <ID>CognitiveComplexMethod:ChatListScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun ChatListScreen( viewModel : ChatListViewModel = hiltViewModel(), navController: NavController?, onUserClick: (String, String) -&gt; Unit)</ID>
+    <ID>CognitiveComplexMethod:ChatScreen.kt$@Composable fun MessageBubble(message: Message, isSentFlag : Boolean)</ID>
+    <ID>CognitiveComplexMethod:LoginScreen.kt$@Composable fun LoginScreen(loginViewModel : LoginViewModel = hiltViewModel(), navController: NavController?)</ID>
+    <ID>CommentSpacing:BottomSheetDialog.kt$//Control the drag/collapse state of the sheet</ID>
+    <ID>CommentSpacing:BottomSheetDialog.kt$//Control visibility with a simple boolean state</ID>
+    <ID>CommentSpacing:ChatListScreen.kt$//chatItem(chat,onClick = { onUserClick(chat.uid,chat.name) })</ID>
+    <ID>CommentSpacing:ChatListScreen.kt$//imageVector = Icons.Filled.ArrowBack,</ID>
+    <ID>CommentSpacing:ChatListScreen.kt$//navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}")</ID>
+    <ID>CommentSpacing:ChatListScreen.kt$//unfocusedTextColor = Color(0xFFF2F2F2),</ID>
+    <ID>CommentSpacing:ChatListScreen.kt$//val viewModel : ChatListViewModel = hiltViewModel()</ID>
+    <ID>CommentSpacing:ChatListViewModel.kt$ChatListViewModel$//call start here</ID>
+    <ID>CommentSpacing:ChatScreen.kt$//.background(bubbleColor)</ID>
+    <ID>CommentSpacing:ChatScreen.kt$//.clip(bubbleShape)</ID>
+    <ID>CommentSpacing:ChatScreen.kt$//Spacer(modifier = Modifier.height(10.dp))</ID>
+    <ID>CommentSpacing:ChatScreen.kt$//if (value.isNotBlank()) {</ID>
+    <ID>CommentSpacing:ChatScreen.kt$//reverseLayout = true</ID>
+    <ID>CommentSpacing:LoginScreen.kt$//BottomSheetDialog(false,"",)</ID>
+    <ID>CommentSpacing:LoginScreen.kt$//login</ID>
+    <ID>CommentSpacing:LoginScreen.kt$//mobileNumText = mobileNum</ID>
+    <ID>CommentSpacing:LoginViewModel.kt$AuthUIEvent$//object signupOnclick : AuthUIEvent()</ID>
+    <ID>CommentSpacing:LoginViewModel.kt$LoginViewModel$//nothing</ID>
+    <ID>CommentSpacing:MainActivity.kt$MainActivity$//enableEdgeToEdge()</ID>
+    <ID>CommentWrapping:ChatListScreen.kt$/* Box(modifier = Modifier.height(30.dp)) }*/</ID>
+    <ID>CommentWrapping:ChatListScreen.kt$/*.clickable { navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}") }*/</ID>
+    <ID>CommentWrapping:ChatListScreen.kt$/*Box(modifier = Modifier .background(toolBarBackground, RoundedCornerShape(8.dp)) .padding(horizontal = 10.dp, vertical = 10.dp)) { Text( text = "5", fontSize = 8.sp, color = Color.White ) }*/</ID>
+    <ID>CommentWrapping:ChatListScreen.kt$/*Spacer(modifier = Modifier.width(12.dp)) Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.Top) { Text( text = "5 mins", fontSize = 8.sp, ) */</ID>
+    <ID>ComposableNaming:ChatScreen.kt$showPreview</ID>
+    <ID>ComposableParamOrder:ChatListScreen.kt$ChatListScreen</ID>
+    <ID>ComposableParamOrder:LoginScreen.kt$LoginScreen</ID>
+    <ID>CyclomaticComplexMethod:AppTextField.kt$@Composable fun AppOutlinedTextField( value: String, onValueChange: (String) -&gt; Unit, modifier: Modifier = Modifier, label: String? = null, placeholder: String? = null, leadingIcon: ImageVector? = null, trailingIcon: ImageVector? = null, onTrailingIconClick: (() -&gt; Unit)? = null, isPassword: Boolean = false, capitalization: KeyboardCapitalization = KeyboardCapitalization.None, keyboardType: KeyboardType = KeyboardType.Text, imeAction: ImeAction = ImeAction.Next, keyboardActions: KeyboardActions = KeyboardActions.Default, isError: Boolean = false, errorMessage: String? = null, supportingText: String? = null, enabled: Boolean = true, readOnly: Boolean = false, singleLine: Boolean = true, maxLines: Int = if (singleLine) 1 else Int.MAX_VALUE, shape: Shape = RoundedCornerShape(8.dp), colors: TextFieldColors = OutlinedTextFieldDefaults.colors(), )</ID>
+    <ID>CyclomaticComplexMethod:ChatScreen.kt$@Composable fun MessageBubble(message: Message, isSentFlag : Boolean)</ID>
+    <ID>CyclomaticComplexMethod:LoginScreen.kt$@Composable fun LoginScreen(loginViewModel : LoginViewModel = hiltViewModel(), navController: NavController?)</ID>
+    <ID>EmptyClassBlock:MyApp.kt$MyApp${ }</ID>
+    <ID>FinalNewline:AppConfig.kt$com.sk.chatmaster.core.common.AppConfig.kt</ID>
+    <ID>FinalNewline:AppModule.kt$com.sk.chatmaster.di.AppModule.kt</ID>
+    <ID>FinalNewline:AuthRepository.kt$com.sk.chatmaster.domain.Repository.AuthRepository.kt</ID>
+    <ID>FinalNewline:AuthRepositoryImpl.kt$com.sk.chatmaster.data.repository.AuthRepositoryImpl.kt</ID>
+    <ID>FinalNewline:AuthToggleSwitch.kt$com.sk.chatmaster.ui.Login.AuthToggleSwitch.kt</ID>
+    <ID>FinalNewline:BottomSheetDialog.kt$com.sk.chatmaster.ui.widget.BottomSheetDialog.kt</ID>
+    <ID>FinalNewline:ChatListRepository.kt$com.sk.chatmaster.domain.Repository.ChatListRepository.kt</ID>
+    <ID>FinalNewline:ChatListScreen.kt$com.sk.chatmaster.ui.chatList.ChatListScreen.kt</ID>
+    <ID>FinalNewline:ChatListViewModel.kt$com.sk.chatmaster.ui.chatList.ChatListViewModel.kt</ID>
+    <ID>FinalNewline:ChatRepository.kt$com.sk.chatmaster.domain.Repository.ChatRepository.kt</ID>
+    <ID>FinalNewline:ChatRepositoryImpl.kt$com.sk.chatmaster.data.repository.ChatRepositoryImpl.kt</ID>
+    <ID>FinalNewline:ChatScreen.kt$com.sk.chatmaster.ui.Chat.ChatScreen.kt</ID>
+    <ID>FinalNewline:ChatUseCase.kt$com.sk.chatmaster.domain.UseCase.ChatUseCase.kt</ID>
+    <ID>FinalNewline:ChatUserListRepositoryImpl.kt$com.sk.chatmaster.data.repository.ChatUserListRepositoryImpl.kt</ID>
+    <ID>FinalNewline:ChatViewModel.kt$com.sk.chatmaster.ui.Chat.ChatViewModel.kt</ID>
+    <ID>FinalNewline:Color.kt$com.sk.chatmaster.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.sk.chatmaster.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:GetChatUsersUseCase.kt$com.sk.chatmaster.domain.UseCase.GetChatUsersUseCase.kt</ID>
+    <ID>FinalNewline:LoginUseCase.kt$com.sk.chatmaster.domain.UseCase.LoginUseCase.kt</ID>
+    <ID>FinalNewline:MainActivity.kt$com.sk.chatmaster.ui.activity.MainActivity.kt</ID>
+    <ID>FinalNewline:Message.kt$com.sk.chatmaster.data.model.Message.kt</ID>
+    <ID>FinalNewline:MyApp.kt$com.sk.chatmaster.MyApp.kt</ID>
+    <ID>FinalNewline:Resource.kt$com.sk.chatmaster.core.common.Resource.kt</ID>
+    <ID>FinalNewline:Route.kt$com.sk.chatmaster.navigation.Route.kt</ID>
+    <ID>FinalNewline:SignUpUseCase.kt$com.sk.chatmaster.domain.UseCase.SignUpUseCase.kt</ID>
+    <ID>FinalNewline:Spacing.kt$com.sk.chatmaster.ui.theme.Spacing.kt</ID>
+    <ID>FinalNewline:StatusDialog.kt$com.sk.chatmaster.ui.widget.StatusDialog.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.sk.chatmaster.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Type.kt$com.sk.chatmaster.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:UiState.kt$com.sk.chatmaster.ui.Chat.UiState.kt</ID>
+    <ID>FinalNewline:UserInfo.kt$com.sk.chatmaster.data.model.UserInfo.kt</ID>
+    <ID>ForbiddenPublicDataClass:ChatListViewModel.kt$ChatUserListUiState$Failure : ChatUserListUiState</ID>
+    <ID>ForbiddenPublicDataClass:ChatListViewModel.kt$ChatUserListUiState$Success : ChatUserListUiState</ID>
+    <ID>ForbiddenPublicDataClass:ChatUser.kt$ChatUser</ID>
+    <ID>ForbiddenPublicDataClass:DialogState.kt$DialogState$Failure : DialogState</ID>
+    <ID>ForbiddenPublicDataClass:DialogState.kt$DialogState$Success : DialogState</ID>
+    <ID>ForbiddenPublicDataClass:LoginState.kt$LoginState</ID>
+    <ID>ForbiddenPublicDataClass:LoginViewModel.kt$AuthUIEvent$ConfirmPasswordChaned : AuthUIEvent</ID>
+    <ID>ForbiddenPublicDataClass:LoginViewModel.kt$AuthUIEvent$EmailChanged : AuthUIEvent</ID>
+    <ID>ForbiddenPublicDataClass:LoginViewModel.kt$AuthUIEvent$MobileChanged : AuthUIEvent</ID>
+    <ID>ForbiddenPublicDataClass:LoginViewModel.kt$AuthUIEvent$NameChanged : AuthUIEvent</ID>
+    <ID>ForbiddenPublicDataClass:LoginViewModel.kt$AuthUIEvent$PasswordChaned : AuthUIEvent</ID>
+    <ID>ForbiddenPublicDataClass:LoginViewModel.kt$AuthUIEvent$SetSignUp : AuthUIEvent</ID>
+    <ID>ForbiddenPublicDataClass:Message.kt$Message</ID>
+    <ID>ForbiddenPublicDataClass:Spacing.kt$Spacing</ID>
+    <ID>ForbiddenPublicDataClass:UiState.kt$UiState$Failure : UiState</ID>
+    <ID>ForbiddenPublicDataClass:UiState.kt$UiState$Success : UiState</ID>
+    <ID>ForbiddenPublicDataClass:UserInfo.kt$UserInfo</ID>
+    <ID>FunctionReturnTypeSpacing:AppModule.kt$AppModule$@Provides @Singleton fun bindAuthRepository(firebaseAuth: FirebaseAuth, firebaseFirestore: FirebaseFirestore) : AuthRepository</ID>
+    <ID>FunctionReturnTypeSpacing:AppModule.kt$AppModule$@Provides @Singleton fun provideChatRepository(firestore: FirebaseFirestore) : ChatRepository</ID>
+    <ID>FunctionReturnTypeSpacing:AppModule.kt$AppModule$@Provides @Singleton fun provideFireBaseAuth() : FirebaseAuth</ID>
+    <ID>FunctionReturnTypeSpacing:AppModule.kt$AppModule$@Provides @Singleton fun provideFireBaseDatabase() : FirebaseDatabase</ID>
+    <ID>FunctionReturnTypeSpacing:AppModule.kt$AppModule$@Provides @Singleton fun provideFireBaseFirestore() : FirebaseFirestore</ID>
+    <ID>FunctionReturnTypeSpacing:AppModule.kt$AppModule$@Provides @Singleton fun providesChatUserListRepository(firestore: FirebaseFirestore) : ChatListRepository</ID>
+    <ID>FunctionReturnTypeSpacing:AuthRepository.kt$AuthRepository$suspend fun login(email : String,password : String) : Resource&lt;String&gt;</ID>
+    <ID>FunctionReturnTypeSpacing:AuthRepository.kt$AuthRepository$suspend fun register(name : String, email: String, password: String, mobile : String) : Resource&lt;UserInfo&gt;</ID>
+    <ID>FunctionReturnTypeSpacing:ChatListRepository.kt$ChatListRepository$suspend fun getChatUserList(uid : String) : Resource&lt;List&lt;ChatUser&gt;&gt;</ID>
+    <ID>FunctionReturnTypeSpacing:ChatRepository.kt$ChatRepository$fun getMessage(chatId : String) : Flow&lt;Resource&lt;List&lt;Message&gt;&gt;&gt;</ID>
+    <ID>FunctionReturnTypeSpacing:ChatUseCase.kt$GetChatUseCase$operator fun invoke(senderID : String, receiverID: String) : Flow&lt;Resource&lt;List&lt;Message&gt;&gt;&gt;</ID>
+    <ID>FunctionReturnTypeSpacing:ChatUseCase.kt$fun buildChatID(senderID : String, receiverID : String) : String</ID>
+    <ID>FunctionReturnTypeSpacing:GetChatUsersUseCase.kt$GetChatUsersUseCase$suspend fun invokeGetUsers(uid : String) : Resource&lt;List&lt;ChatUser&gt;&gt;</ID>
+    <ID>FunctionReturnTypeSpacing:LoginUseCase.kt$LoginUseCase$suspend fun invokeLogin(email : String, password : String) : Resource&lt;String&gt;</ID>
+    <ID>FunctionReturnTypeSpacing:SignUpUseCase.kt$SignUpUseCase$suspend fun invokeSignUp(name : String,email: String,password: String,mobile : String) : Resource&lt;UserInfo&gt;</ID>
+    <ID>FunctionStartOfBodySpacing:AppModule.kt$AppModule$@Provides @Singleton fun provideFireBaseAuth() : FirebaseAuth</ID>
+    <ID>ImportOrdering:AppNavigation.kt$import androidx.compose.foundation.layout.PaddingValues import androidx.compose.foundation.layout.padding import androidx.compose.runtime.Composable import androidx.compose.ui.Modifier import androidx.navigation.NavType import androidx.navigation.compose.NavHost import androidx.navigation.compose.composable import androidx.navigation.compose.rememberNavController import androidx.navigation.navArgument import com.sk.chatmaster.ui.Chat.ChatScreen import com.sk.chatmaster.ui.chatList.ChatListScreen import com.sk.chatmaster.ui.Login.LoginScreen</ID>
+    <ID>ImportOrdering:ExampleUnitTest.kt$import org.junit.Test import org.junit.Assert.*</ID>
+    <ID>Indentation:AuthRepositoryImpl.kt$AuthRepositoryImpl$ </ID>
+    <ID>Indentation:BottomSheetDialog.kt$ </ID>
+    <ID>Indentation:ChatListScreen.kt$ </ID>
+    <ID>Indentation:ChatRepository.kt$ChatRepository$ </ID>
+    <ID>Indentation:ChatScreen.kt$ </ID>
+    <ID>Indentation:ChatViewModel.kt$ChatViewModel$ </ID>
+    <ID>Indentation:LoginScreen.kt$ </ID>
+    <ID>Indentation:LoginViewModel.kt$LoginViewModel$ </ID>
+    <ID>Indentation:MainActivity.kt$MainActivity$ </ID>
+    <ID>Indentation:StatusDialog.kt$ </ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AppConfig.kt$AppConfig</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AppNavigation.kt$@Composable fun AppNavigation(contentPadding : PaddingValues)</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AppTextField.kt$@Composable fun AppEmailTextField( value: String, onValueChange: (String) -&gt; Unit, modifier: Modifier = Modifier, label: String = "Email", isError: Boolean = false, errorMessage: String? = null, imeAction: ImeAction = ImeAction.Next, keyboardActions: KeyboardActions = KeyboardActions.Default, leadingIcon: ImageVector? = null, )</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AppTextField.kt$@Composable fun AppOutlinedTextField( value: String, onValueChange: (String) -&gt; Unit, modifier: Modifier = Modifier, label: String? = null, placeholder: String? = null, leadingIcon: ImageVector? = null, trailingIcon: ImageVector? = null, onTrailingIconClick: (() -&gt; Unit)? = null, isPassword: Boolean = false, capitalization: KeyboardCapitalization = KeyboardCapitalization.None, keyboardType: KeyboardType = KeyboardType.Text, imeAction: ImeAction = ImeAction.Next, keyboardActions: KeyboardActions = KeyboardActions.Default, isError: Boolean = false, errorMessage: String? = null, supportingText: String? = null, enabled: Boolean = true, readOnly: Boolean = false, singleLine: Boolean = true, maxLines: Int = if (singleLine) 1 else Int.MAX_VALUE, shape: Shape = RoundedCornerShape(8.dp), colors: TextFieldColors = OutlinedTextFieldDefaults.colors(), )</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AppTextField.kt$@Composable fun AppPasswordTextField( value: String, onValueChange: (String) -&gt; Unit, modifier: Modifier = Modifier, label: String = "Password", isError: Boolean = false, errorMessage: String? = null, imeAction: ImeAction = ImeAction.Done, keyboardActions: KeyboardActions = KeyboardActions.Default, leadingIcon: ImageVector? = null, )</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AppTextField.kt$@Composable fun AppPhoneTextField( value: String, onValueChange: (String) -&gt; Unit, modifier: Modifier = Modifier, label: String = "Phone number", isError: Boolean = false, errorMessage: String? = null, imeAction: ImeAction = ImeAction.Next, keyboardActions: KeyboardActions = KeyboardActions.Default, leadingIcon: ImageVector? = null, )</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AppTextField.kt$@Composable fun AppTextAreaField( value: String, onValueChange: (String) -&gt; Unit, modifier: Modifier = Modifier, label: String? = null, placeholder: String? = null, isError: Boolean = false, errorMessage: String? = null, maxLines: Int = 5, capitalization: KeyboardCapitalization = KeyboardCapitalization.Sentences, )</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AuthRepository.kt$AuthRepository</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AuthRepositoryImpl.kt$AuthRepositoryImpl : AuthRepository</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:AuthToggleSwitch.kt$@Composable fun AuthToggleSwitch( isSignUpSelected: Boolean, onToggleChanged: (Boolean) -&gt; Unit, modifier: Modifier = Modifier )</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:BottomSheetDialog.kt$@Composable @OptIn(ExperimentalMaterial3Api::class) fun BottomSheetDialog(sheetState : Boolean, title : String, content : String, type : String, titleShowFlag : Boolean)</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:BottomSheetDialog.kt$@Preview(showBackground = true) @Composable fun ShowBottomPreview()</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatListRepository.kt$ChatListRepository</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatListScreen.kt$@Composable fun ChatItem(chatUser: ChatUser, navController: NavController?, onUserClick: (String, String) -&gt; Unit)</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatListScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun ChatListScreen( viewModel : ChatListViewModel = hiltViewModel(), navController: NavController?, onUserClick: (String, String) -&gt; Unit)</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatListScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Preview(showBackground = true) @Composable fun ShowPreview()</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatListViewModel.kt$ChatListViewModel : ViewModel</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatListViewModel.kt$ChatUserListUiState</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatRepository.kt$ChatRepository</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatRepositoryImpl.kt$ChatRepositoryImpl : ChatRepository</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatScreen.kt$@Composable fun MessageBubble(message: Message, isSentFlag : Boolean)</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun ChatScreen(navController : NavController?, receiverId: String, receiverName: String, viewModel: ChatViewModel = hiltViewModel() )</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatScreen.kt$@Preview(showBackground = true) @Composable fun showPreview()</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatUseCase.kt$GetChatUseCase</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatUseCase.kt$MarkMessagesReadUseCase</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatUseCase.kt$SendAudioMessageUseCase</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatUseCase.kt$SendTextMessageUseCase</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatUseCase.kt$fun buildChatID(senderID : String, receiverID : String) : String</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatUser.kt$ChatUser</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatUserListRepositoryImpl.kt$ChatUserListRepositoryImpl : ChatListRepository</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ChatViewModel.kt$ChatViewModel : ViewModel</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:DialogState.kt$DialogState</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:ExampleUnitTest.kt$ExampleUnitTest</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:GetChatUsersUseCase.kt$GetChatUsersUseCase</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:LoginScreen.kt$@Composable fun CircularProgressComponent()</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:LoginScreen.kt$@Composable fun LoginScreen(loginViewModel : LoginViewModel = hiltViewModel(), navController: NavController?)</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:LoginScreen.kt$@Preview(showBackground = true) @Composable fun LoginPreview()</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:LoginState.kt$LoginState</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:LoginUseCase.kt$LoginUseCase</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:LoginViewModel.kt$AuthUIEvent</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:LoginViewModel.kt$LoginViewModel : ViewModel</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:MainActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:MainActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:MainActivity.kt$MainActivity : ComponentActivity</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:Message.kt$Message</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:MyApp.kt$MyApp : Application</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:Resource.kt$Resource&lt;T&gt;</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:SignUpUseCase.kt$SignUpUseCase</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:Spacing.kt$Spacing</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:StatusDialog.kt$@Composable fun StatusDialog( state: DialogState, onDismiss: (String?) -&gt; Unit )</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:StatusDialog.kt$@Preview(showBackground = true) @Composable fun ShowDialog()</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:Theme.kt$@Composable fun ChatMasterTheme( darkTheme: Boolean = isSystemInDarkTheme(), // Dynamic color is available on Android 12+ dynamicColor: Boolean = true, content: @Composable () -&gt; Unit )</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:UiState.kt$UiState</ID>
+    <ID>LibraryEntitiesShouldNotBePublic:UserInfo.kt$UserInfo</ID>
+    <ID>LongMethod:ChatListScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun ChatListScreen( viewModel : ChatListViewModel = hiltViewModel(), navController: NavController?, onUserClick: (String, String) -&gt; Unit)</ID>
+    <ID>LongMethod:LoginScreen.kt$@Composable fun LoginScreen(loginViewModel : LoginViewModel = hiltViewModel(), navController: NavController?)</ID>
+    <ID>MagicNumber:AuthToggleSwitch.kt$0xFF002C49</ID>
+    <ID>MagicNumber:AuthToggleSwitch.kt$0xFF020F5D</ID>
+    <ID>MagicNumber:AuthToggleSwitch.kt$0xFFA5BFF3</ID>
+    <ID>MagicNumber:AuthToggleSwitch.kt$0xFFF1F2F6</ID>
+    <ID>MagicNumber:ChatListScreen.kt$0xFFFFFFFF</ID>
+    <ID>MagicNumber:ChatScreen.kt$0xFF34B7F1</ID>
+    <ID>MagicNumber:ChatScreen.kt$0xFFF5F5F5</ID>
+    <ID>MagicNumber:ChatScreen.kt$10</ID>
+    <ID>MagicNumber:ChatScreen.kt$12</ID>
+    <ID>MagicNumber:ChatScreen.kt$14</ID>
+    <ID>MagicNumber:ChatScreen.kt$16</ID>
+    <ID>MagicNumber:ChatScreen.kt$18</ID>
+    <ID>MagicNumber:ChatScreen.kt$20</ID>
+    <ID>MagicNumber:ChatScreen.kt$22</ID>
+    <ID>MagicNumber:ChatScreen.kt$24</ID>
+    <ID>MagicNumber:ChatScreen.kt$28</ID>
+    <ID>MagicNumber:ChatScreen.kt$8</ID>
+    <ID>MagicNumber:LoginScreen.kt$0.5f</ID>
+    <ID>MagicNumber:LoginViewModel.kt$LoginViewModel$10</ID>
+    <ID>MagicNumber:LoginViewModel.kt$LoginViewModel$5</ID>
+    <ID>MagicNumber:StatusDialog.kt$0.7f</ID>
+    <ID>MagicNumber:StatusDialog.kt$0xFF4CAF50</ID>
+    <ID>MagicNumber:StatusDialog.kt$0xFFF44336</ID>
+    <ID>MaxLineLength:ChatListScreen.kt$/*var userList = listOf&lt;ChatUser&gt;(ChatUser(chatUserID = "sdfjasjdfjsdflj", "Sudhakar","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Vijay","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Mathu","sudhakar@gmail.com","9095655761","","",""), ChatUser( "sdfjasjdfjsdflj","Tamizhan","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Baskaran","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Karthik","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Ramamoorthy","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Varatharaj","sudhakar@gmail.com","9095655761","","",""))*/</ID>
+    <ID>MaxLineLength:ChatScreen.kt$Message("dffgg","123","321",message = "Have you made any plans for the weekend dsfasfd asfasdf sdfasf dfadsf?", messageType = MessageType.TEXT, read = true)</ID>
+    <ID>MaxLineLength:ChatScreen.kt$Message("eoiut","123","321", audioUrl = "Textsdfasdfasdfasdsdf",audioDuration = "2 Mins", messageType = MessageType.AUDIO, read = true)</ID>
+    <ID>MaximumLineLength:ChatScreen.kt$ </ID>
+    <ID>MayBeConst:AppConfig.kt$AppConfig.Companion$val CHAT_USERS_COLLECTION : String = "chat_users"</ID>
+    <ID>MayBeConst:Route.kt$Route$val ChatListScreen = "ChatListScreen"</ID>
+    <ID>MayBeConst:Route.kt$Route$val ChatScreen = "ChatScreen/{receiverId}/{receiverName}"</ID>
+    <ID>MayBeConst:Route.kt$Route$val LoginScreen = "LoginScreen"</ID>
+    <ID>ModifierMissing:AppNavigation.kt$AppNavigation</ID>
+    <ID>ModifierMissing:BottomSheetDialog.kt$BottomSheetDialog</ID>
+    <ID>ModifierMissing:ChatListScreen.kt$ChatItem</ID>
+    <ID>ModifierMissing:ChatListScreen.kt$ChatListScreen</ID>
+    <ID>ModifierMissing:ChatScreen.kt$ChatScreen</ID>
+    <ID>ModifierMissing:ChatScreen.kt$MessageBubble</ID>
+    <ID>ModifierMissing:LoginScreen.kt$CircularProgressComponent</ID>
+    <ID>ModifierMissing:LoginScreen.kt$LoginScreen</ID>
+    <ID>ModifierMissing:StatusDialog.kt$StatusDialog</ID>
+    <ID>MultiLineIfElse:AppTextField.kt$Icons.Filled.Visibility</ID>
+    <ID>MultiLineIfElse:AppTextField.kt$Icons.Filled.VisibilityOff</ID>
+    <ID>MultiLineIfElse:ChatScreen.kt$PaddingValues(start = 1.dp,top = 1.dp,end = 10.dp, bottom = 5.dp)</ID>
+    <ID>MultiLineIfElse:ChatScreen.kt$PaddingValues(start = 10.dp,top = 5.dp,end = 10.dp, bottom = 0.dp)</ID>
+    <ID>MultiLineIfElse:ChatScreen.kt$RoundedCornerShape( topStart = 14.dp, topEnd = 0.dp, bottomStart = 14.dp, bottomEnd = 14.dp )</ID>
+    <ID>MultiLineIfElse:ChatScreen.kt$RoundedCornerShape(topStart = 0.dp, topEnd = 14.dp, bottomStart = 14.dp, bottomEnd = 14.dp)</ID>
+    <ID>MultiLineIfElse:LoginScreen.kt$loginViewModel.loginEvent(AuthUIEvent.submitOnClick)</ID>
+    <ID>MultipleEmitters:ChatScreen.kt$DateChip</ID>
+    <ID>NewLineAtEndOfFile:AppConfig.kt$com.sk.chatmaster.core.common.AppConfig.kt</ID>
+    <ID>NewLineAtEndOfFile:AppModule.kt$com.sk.chatmaster.di.AppModule.kt</ID>
+    <ID>NewLineAtEndOfFile:AuthRepository.kt$com.sk.chatmaster.domain.Repository.AuthRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:AuthRepositoryImpl.kt$com.sk.chatmaster.data.repository.AuthRepositoryImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:AuthToggleSwitch.kt$com.sk.chatmaster.ui.Login.AuthToggleSwitch.kt</ID>
+    <ID>NewLineAtEndOfFile:BottomSheetDialog.kt$com.sk.chatmaster.ui.widget.BottomSheetDialog.kt</ID>
+    <ID>NewLineAtEndOfFile:ChatListRepository.kt$com.sk.chatmaster.domain.Repository.ChatListRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:ChatListScreen.kt$com.sk.chatmaster.ui.chatList.ChatListScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:ChatListViewModel.kt$com.sk.chatmaster.ui.chatList.ChatListViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:ChatRepository.kt$com.sk.chatmaster.domain.Repository.ChatRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:ChatRepositoryImpl.kt$com.sk.chatmaster.data.repository.ChatRepositoryImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:ChatScreen.kt$com.sk.chatmaster.ui.Chat.ChatScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:ChatUseCase.kt$com.sk.chatmaster.domain.UseCase.ChatUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:ChatUserListRepositoryImpl.kt$com.sk.chatmaster.data.repository.ChatUserListRepositoryImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:ChatViewModel.kt$com.sk.chatmaster.ui.Chat.ChatViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.sk.chatmaster.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.sk.chatmaster.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:GetChatUsersUseCase.kt$com.sk.chatmaster.domain.UseCase.GetChatUsersUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:LoginUseCase.kt$com.sk.chatmaster.domain.UseCase.LoginUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$com.sk.chatmaster.ui.activity.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:Message.kt$com.sk.chatmaster.data.model.Message.kt</ID>
+    <ID>NewLineAtEndOfFile:MyApp.kt$com.sk.chatmaster.MyApp.kt</ID>
+    <ID>NewLineAtEndOfFile:Resource.kt$com.sk.chatmaster.core.common.Resource.kt</ID>
+    <ID>NewLineAtEndOfFile:Route.kt$com.sk.chatmaster.navigation.Route.kt</ID>
+    <ID>NewLineAtEndOfFile:SignUpUseCase.kt$com.sk.chatmaster.domain.UseCase.SignUpUseCase.kt</ID>
+    <ID>NewLineAtEndOfFile:Spacing.kt$com.sk.chatmaster.ui.theme.Spacing.kt</ID>
+    <ID>NewLineAtEndOfFile:StatusDialog.kt$com.sk.chatmaster.ui.widget.StatusDialog.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.sk.chatmaster.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.sk.chatmaster.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:UiState.kt$com.sk.chatmaster.ui.Chat.UiState.kt</ID>
+    <ID>NewLineAtEndOfFile:UserInfo.kt$com.sk.chatmaster.data.model.UserInfo.kt</ID>
+    <ID>NoBlankLineBeforeRbrace:AuthRepository.kt$AuthRepository$ </ID>
+    <ID>NoBlankLineBeforeRbrace:BottomSheetDialog.kt$ </ID>
+    <ID>NoBlankLineBeforeRbrace:ChatListRepository.kt$ChatListRepository$ </ID>
+    <ID>NoBlankLineBeforeRbrace:ChatListViewModel.kt$ChatListViewModel$ </ID>
+    <ID>NoBlankLineBeforeRbrace:ChatScreen.kt$ </ID>
+    <ID>NoBlankLineBeforeRbrace:ChatUserListRepositoryImpl.kt$ChatUserListRepositoryImpl$ </ID>
+    <ID>NoBlankLineBeforeRbrace:ChatViewModel.kt$ChatViewModel$ </ID>
+    <ID>NoBlankLineBeforeRbrace:GetChatUsersUseCase.kt$GetChatUsersUseCase$ </ID>
+    <ID>NoBlankLineBeforeRbrace:LoginViewModel.kt$LoginViewModel$ </ID>
+    <ID>NoBlankLineBeforeRbrace:MyApp.kt$MyApp$ </ID>
+    <ID>NoBlankLineBeforeRbrace:Route.kt$Route$ </ID>
+    <ID>NoBlankLineBeforeRbrace:StatusDialog.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:AppConfig.kt$AppConfig.Companion$ </ID>
+    <ID>NoConsecutiveBlankLines:AppTextField.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:ChatListScreen.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:ChatListViewModel.kt$ChatListViewModel$ </ID>
+    <ID>NoConsecutiveBlankLines:Color.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:LoginViewModel.kt$LoginViewModel$ </ID>
+    <ID>NoEmptyClassBody:MyApp.kt$MyApp${ }</ID>
+    <ID>NoEmptyFirstLineInMethodBlock:AuthRepositoryImpl.kt$AuthRepositoryImpl$ </ID>
+    <ID>NoEmptyFirstLineInMethodBlock:BottomSheetDialog.kt$ </ID>
+    <ID>NoEmptyFirstLineInMethodBlock:ChatListScreen.kt$ </ID>
+    <ID>NoEmptyFirstLineInMethodBlock:ChatScreen.kt$ </ID>
+    <ID>NoEmptyFirstLineInMethodBlock:LoginViewModel.kt$LoginViewModel$ </ID>
+    <ID>NoEmptyFirstLineInMethodBlock:MainActivity.kt$MainActivity$ </ID>
+    <ID>NoEmptyFirstLineInMethodBlock:StatusDialog.kt$ </ID>
+    <ID>NoMultipleSpaces:AppConfig.kt$AppConfig.Companion$ </ID>
+    <ID>NoMultipleSpaces:AppModule.kt$AppModule$ </ID>
+    <ID>NoMultipleSpaces:AppNavigation.kt$ </ID>
+    <ID>NoMultipleSpaces:AppTextField.kt$ </ID>
+    <ID>NoMultipleSpaces:ChatListScreen.kt$ </ID>
+    <ID>NoMultipleSpaces:ChatListViewModel.kt$ChatListViewModel$ </ID>
+    <ID>NoMultipleSpaces:ChatRepositoryImpl.kt$ChatRepositoryImpl$ </ID>
+    <ID>NoMultipleSpaces:ChatScreen.kt$ </ID>
+    <ID>NoMultipleSpaces:ChatViewModel.kt$ChatViewModel$ </ID>
+    <ID>NoMultipleSpaces:Color.kt$ </ID>
+    <ID>NoMultipleSpaces:LoginUseCase.kt$LoginUseCase$ </ID>
+    <ID>NoMultipleSpaces:LoginViewModel.kt$LoginViewModel$ </ID>
+    <ID>NoMultipleSpaces:Message.kt$Message$ </ID>
+    <ID>NoMultipleSpaces:Message.kt$MessageType$ </ID>
+    <ID>NoUnusedImports:AppTextField.kt$com.sk.chatmaster.core.common.AppTextField.kt</ID>
+    <ID>NoUnusedImports:BottomSheetDialog.kt$com.sk.chatmaster.ui.widget.BottomSheetDialog.kt</ID>
+    <ID>NoUnusedImports:ChatListViewModel.kt$com.sk.chatmaster.ui.chatList.ChatListViewModel.kt</ID>
+    <ID>NoUnusedImports:ChatScreen.kt$com.sk.chatmaster.ui.Chat.ChatScreen.kt</ID>
+    <ID>NoUnusedImports:CustomOutlinedTextField.kt$com.sk.chatmaster.utils.CustomOutlinedTextField.kt</ID>
+    <ID>NoUnusedImports:DialogState.kt$com.sk.chatmaster.ui.widget.DialogState.kt</ID>
+    <ID>NoUnusedImports:LoginScreen.kt$com.sk.chatmaster.ui.Login.LoginScreen.kt</ID>
+    <ID>NoUnusedImports:MainActivity.kt$com.sk.chatmaster.ui.activity.MainActivity.kt</ID>
+    <ID>NoUnusedImports:StatusDialog.kt$com.sk.chatmaster.ui.widget.StatusDialog.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.sk.chatmaster.ui.theme.Theme.kt</ID>
+    <ID>PackageName:AuthRepository.kt$package com.sk.chatmaster.domain.Repository</ID>
+    <ID>PackageName:AuthToggleSwitch.kt$package com.sk.chatmaster.ui.Login</ID>
+    <ID>PackageName:ChatListRepository.kt$package com.sk.chatmaster.domain.Repository</ID>
+    <ID>PackageName:ChatRepository.kt$package com.sk.chatmaster.domain.Repository</ID>
+    <ID>PackageName:ChatScreen.kt$package com.sk.chatmaster.ui.Chat</ID>
+    <ID>PackageName:ChatUseCase.kt$package com.sk.chatmaster.domain.UseCase</ID>
+    <ID>PackageName:ChatViewModel.kt$package com.sk.chatmaster.ui.Chat</ID>
+    <ID>PackageName:GetChatUsersUseCase.kt$package com.sk.chatmaster.domain.UseCase</ID>
+    <ID>PackageName:LoginScreen.kt$package com.sk.chatmaster.ui.Login</ID>
+    <ID>PackageName:LoginState.kt$package com.sk.chatmaster.ui.Login</ID>
+    <ID>PackageName:LoginUseCase.kt$package com.sk.chatmaster.domain.UseCase</ID>
+    <ID>PackageName:LoginViewModel.kt$package com.sk.chatmaster.ui.Login</ID>
+    <ID>PackageName:SignUpUseCase.kt$package com.sk.chatmaster.domain.UseCase</ID>
+    <ID>PackageName:UiState.kt$package com.sk.chatmaster.ui.Chat</ID>
+    <ID>PackageNaming:AuthRepository.kt$package com.sk.chatmaster.domain.Repository</ID>
+    <ID>PackageNaming:AuthToggleSwitch.kt$package com.sk.chatmaster.ui.Login</ID>
+    <ID>PackageNaming:ChatListRepository.kt$package com.sk.chatmaster.domain.Repository</ID>
+    <ID>PackageNaming:ChatRepository.kt$package com.sk.chatmaster.domain.Repository</ID>
+    <ID>PackageNaming:ChatScreen.kt$package com.sk.chatmaster.ui.Chat</ID>
+    <ID>PackageNaming:ChatUseCase.kt$package com.sk.chatmaster.domain.UseCase</ID>
+    <ID>PackageNaming:ChatViewModel.kt$package com.sk.chatmaster.ui.Chat</ID>
+    <ID>PackageNaming:GetChatUsersUseCase.kt$package com.sk.chatmaster.domain.UseCase</ID>
+    <ID>PackageNaming:LoginScreen.kt$package com.sk.chatmaster.ui.Login</ID>
+    <ID>PackageNaming:LoginState.kt$package com.sk.chatmaster.ui.Login</ID>
+    <ID>PackageNaming:LoginUseCase.kt$package com.sk.chatmaster.domain.UseCase</ID>
+    <ID>PackageNaming:LoginViewModel.kt$package com.sk.chatmaster.ui.Login</ID>
+    <ID>PackageNaming:SignUpUseCase.kt$package com.sk.chatmaster.domain.UseCase</ID>
+    <ID>PackageNaming:UiState.kt$package com.sk.chatmaster.ui.Chat</ID>
+    <ID>ParameterListWrapping:AuthRepositoryImpl.kt$AuthRepositoryImpl$(private val firebaseAuth: FirebaseAuth, private val firestore: FirebaseFirestore)</ID>
+    <ID>ParameterListWrapping:BottomSheetDialog.kt$(sheetState : Boolean, title : String, content : String, type : String, titleShowFlag : Boolean)</ID>
+    <ID>ParameterListWrapping:ChatListScreen.kt$( viewModel : ChatListViewModel = hiltViewModel(), navController: NavController?, onUserClick: (String, String) -&gt; Unit)</ID>
+    <ID>ParameterListWrapping:ChatListScreen.kt$(chatUser: ChatUser, navController: NavController?, onUserClick: (String, String) -&gt; Unit)</ID>
+    <ID>ParameterListWrapping:ChatRepository.kt$ChatRepository$(chatID : String, senderID : String, receiverID : String, message: String, )</ID>
+    <ID>ParameterListWrapping:ChatScreen.kt$(navController : NavController?, receiverId: String, receiverName: String, viewModel: ChatViewModel = hiltViewModel() )</ID>
+    <ID>ParameterListWrapping:ChatViewModel.kt$ChatViewModel$(private val getChatUseCase: GetChatUseCase, private val sendTextMessageUseCase: SendTextMessageUseCase, private val sendAudioMessageUseCase: SendAudioMessageUseCase, private val markMessagesReadUseCase: MarkMessagesReadUseCase )</ID>
+    <ID>ParameterListWrapping:LoginScreen.kt$(loginViewModel : LoginViewModel = hiltViewModel(), navController: NavController?)</ID>
+    <ID>ParameterListWrapping:LoginViewModel.kt$LoginViewModel$(private val loginUseCase: LoginUseCase, private val signUpUseCase: SignUpUseCase)</ID>
+    <ID>SpacingAroundColon:AppConfig.kt$AppConfig.Companion$:</ID>
+    <ID>SpacingAroundColon:AppModule.kt$AppModule$:</ID>
+    <ID>SpacingAroundColon:AppNavigation.kt$:</ID>
+    <ID>SpacingAroundColon:AuthRepository.kt$AuthRepository$:</ID>
+    <ID>SpacingAroundColon:AuthRepositoryImpl.kt$AuthRepositoryImpl$:</ID>
+    <ID>SpacingAroundColon:BottomSheetDialog.kt$:</ID>
+    <ID>SpacingAroundColon:ChatListRepository.kt$ChatListRepository$:</ID>
+    <ID>SpacingAroundColon:ChatListScreen.kt$:</ID>
+    <ID>SpacingAroundColon:ChatListViewModel.kt$ChatListViewModel$:</ID>
+    <ID>SpacingAroundColon:ChatListViewModel.kt$ChatUserListUiState.Failure$:</ID>
+    <ID>SpacingAroundColon:ChatListViewModel.kt$ChatUserListUiState.Success$:</ID>
+    <ID>SpacingAroundColon:ChatRepository.kt$ChatRepository$:</ID>
+    <ID>SpacingAroundColon:ChatRepositoryImpl.kt$ChatRepositoryImpl$:</ID>
+    <ID>SpacingAroundColon:ChatScreen.kt$:</ID>
+    <ID>SpacingAroundColon:ChatUseCase.kt$:</ID>
+    <ID>SpacingAroundColon:ChatUseCase.kt$GetChatUseCase$:</ID>
+    <ID>SpacingAroundColon:DialogState.kt$DialogState.Failure$:</ID>
+    <ID>SpacingAroundColon:DialogState.kt$DialogState.Success$:</ID>
+    <ID>SpacingAroundColon:GetChatUsersUseCase.kt$GetChatUsersUseCase$:</ID>
+    <ID>SpacingAroundColon:LoginScreen.kt$:</ID>
+    <ID>SpacingAroundColon:LoginState.kt$LoginState$:</ID>
+    <ID>SpacingAroundColon:LoginUseCase.kt$LoginUseCase$:</ID>
+    <ID>SpacingAroundColon:LoginViewModel.kt$AuthUIEvent.ConfirmPasswordChaned$:</ID>
+    <ID>SpacingAroundColon:LoginViewModel.kt$AuthUIEvent.EmailChanged$:</ID>
+    <ID>SpacingAroundColon:LoginViewModel.kt$AuthUIEvent.MobileChanged$:</ID>
+    <ID>SpacingAroundColon:LoginViewModel.kt$AuthUIEvent.NameChanged$:</ID>
+    <ID>SpacingAroundColon:LoginViewModel.kt$AuthUIEvent.PasswordChaned$:</ID>
+    <ID>SpacingAroundColon:LoginViewModel.kt$AuthUIEvent.SetSignUp$:</ID>
+    <ID>SpacingAroundColon:LoginViewModel.kt$LoginViewModel$:</ID>
+    <ID>SpacingAroundColon:Resource.kt$Resource$:</ID>
+    <ID>SpacingAroundColon:SignUpUseCase.kt$SignUpUseCase$:</ID>
+    <ID>SpacingAroundColon:Spacing.kt$Spacing$:</ID>
+    <ID>SpacingAroundColon:UiState.kt$UiState.Failure$:</ID>
+    <ID>SpacingAroundColon:UiState.kt$UiState.Success$:</ID>
+    <ID>SpacingAroundColon:UserInfo.kt$UserInfo$:</ID>
+    <ID>SpacingAroundComma:AppModule.kt$AppModule$,</ID>
+    <ID>SpacingAroundComma:AuthRepository.kt$AuthRepository$,</ID>
+    <ID>SpacingAroundComma:AuthRepositoryImpl.kt$AuthRepositoryImpl$,</ID>
+    <ID>SpacingAroundComma:BottomSheetDialog.kt$,</ID>
+    <ID>SpacingAroundComma:ChatListScreen.kt$,</ID>
+    <ID>SpacingAroundComma:ChatRepositoryImpl.kt$ChatRepositoryImpl$,</ID>
+    <ID>SpacingAroundComma:ChatScreen.kt$,</ID>
+    <ID>SpacingAroundComma:ChatUseCase.kt$GetChatUseCase$,</ID>
+    <ID>SpacingAroundComma:DialogState.kt$DialogState.Success$,</ID>
+    <ID>SpacingAroundComma:LoginUseCase.kt$LoginUseCase$,</ID>
+    <ID>SpacingAroundComma:LoginViewModel.kt$LoginViewModel$,</ID>
+    <ID>SpacingAroundComma:SignUpUseCase.kt$SignUpUseCase$,</ID>
+    <ID>SpacingAroundCurly:BottomSheetDialog.kt$}</ID>
+    <ID>SpacingAroundCurly:ChatListScreen.kt${</ID>
+    <ID>SpacingAroundCurly:ChatListViewModel.kt$ChatListViewModel${</ID>
+    <ID>SpacingAroundCurly:ChatUseCase.kt$GetChatUseCase${</ID>
+    <ID>SpacingAroundCurly:ChatUserListRepositoryImpl.kt$ChatUserListRepositoryImpl${</ID>
+    <ID>SpacingAroundCurly:LoginScreen.kt${</ID>
+    <ID>SpacingAroundCurly:LoginScreen.kt$}</ID>
+    <ID>SpacingAroundKeyword:ChatListScreen.kt$if</ID>
+    <ID>SpacingAroundKeyword:ChatListScreen.kt$when</ID>
+    <ID>SpacingAroundKeyword:ChatScreen.kt$when</ID>
+    <ID>SpacingAroundKeyword:LoginViewModel.kt$LoginViewModel$when</ID>
+    <ID>SpacingAroundParens:ChatListScreen.kt$(</ID>
+    <ID>SpacingAroundParens:ChatRepositoryImpl.kt$ChatRepositoryImpl$(</ID>
+    <ID>SpacingAroundParens:ChatScreen.kt$(</ID>
+    <ID>SpacingAroundParens:LoginScreen.kt$(</ID>
+    <ID>SpacingAroundParens:LoginViewModel.kt$LoginViewModel$)</ID>
+    <ID>SpacingAroundParens:Spacing.kt$Spacing$(</ID>
+    <ID>SpacingBetweenDeclarationsWithAnnotations:ChatListScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun ChatListScreen( viewModel : ChatListViewModel = hiltViewModel(), navController: NavController?, onUserClick: (String, String) -&gt; Unit)</ID>
+    <ID>SpacingBetweenDeclarationsWithAnnotations:ChatScreen.kt$@Composable private fun AudioBubble(duration: String, textColor: Color, isSent: Boolean, paddingValues: PaddingValues)</ID>
+    <ID>SpacingBetweenDeclarationsWithAnnotations:LoginScreen.kt$@Composable fun CircularProgressComponent()</ID>
+    <ID>SpacingBetweenDeclarationsWithAnnotations:LoginScreen.kt$@Composable fun LoginScreen(loginViewModel : LoginViewModel = hiltViewModel(), navController: NavController?)</ID>
+    <ID>StringTemplate:AppNavigation.kt$${receiverID}</ID>
+    <ID>StringTemplate:AppNavigation.kt$${receiverName}</ID>
+    <ID>StringTemplate:ChatUseCase.kt$${receiverID}</ID>
+    <ID>StringTemplate:ChatUseCase.kt$${senderID}</ID>
+    <ID>TooGenericExceptionCaught:AuthRepositoryImpl.kt$AuthRepositoryImpl$e : Exception</ID>
+    <ID>TooGenericExceptionCaught:AuthRepositoryImpl.kt$AuthRepositoryImpl$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:ChatRepositoryImpl.kt$ChatRepositoryImpl$e : Exception</ID>
+    <ID>TooGenericExceptionCaught:ChatUserListRepositoryImpl.kt$ChatUserListRepositoryImpl$e: Exception</ID>
+    <ID>TrailingCommaOnCallSite:AppNavigation.kt$( navArgument("receiverId") { type = NavType.StringType }, navArgument("receiverName") { type = NavType.StringType } )</ID>
+    <ID>TrailingCommaOnCallSite:AppNavigation.kt$( navController = navController, startDestination = Route.LoginScreen, modifier = Modifier.padding(contentPadding), builder = { composable(route = Route.LoginScreen) { LoginScreen(navController = navController) } composable(route = Route.ChatListScreen) { ChatListScreen(navController = navController, onUserClick = { receiverID, receiverName -&gt; navController.navigate("ChatScreen/${receiverID}/${receiverName}") }) } composable( route = Route.ChatScreen, arguments = listOf( navArgument("receiverId") { type = NavType.StringType }, navArgument("receiverName") { type = NavType.StringType } ) ) { backStackEntry -&gt; // Extract parameters safely val receiverId = backStackEntry.arguments?.getString("receiverId").orEmpty() val receiverName = backStackEntry.arguments?.getString("receiverName").orEmpty() ChatScreen( navController, receiverId = receiverId, receiverName = receiverName, ) } } )</ID>
+    <ID>TrailingCommaOnCallSite:AppNavigation.kt$( route = Route.ChatScreen, arguments = listOf( navArgument("receiverId") { type = NavType.StringType }, navArgument("receiverName") { type = NavType.StringType } ) )</ID>
+    <ID>TrailingCommaOnCallSite:AuthRepositoryImpl.kt$AuthRepositoryImpl$( "uid" to uid, "name" to name, "email" to email, "password" to password, "mobile" to mobile, "createdAt" to Timestamp.now() )</ID>
+    <ID>TrailingCommaOnCallSite:AuthRepositoryImpl.kt$AuthRepositoryImpl$( uid = uid, name = name, password = password, email = email, mobile = mobile )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( interactionSource = remember { MutableInteractionSource() }, indication = null )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( modifier = Modifier .offset(x = indicatorOffset) .width(tabWidth) .fillMaxHeight() .background(activeColor, RoundedCornerShape(20.dp)) )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( modifier = Modifier .weight(1f) .fillMaxHeight() .clip(RoundedCornerShape(15.dp)) .clickable( interactionSource = remember { MutableInteractionSource() }, indication = null ) { onToggleChanged(true) }, contentAlignment = Alignment.Center )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( modifier = Modifier .weight(1f) .fillMaxHeight() .clip(RoundedCornerShape(20.dp)) .clickable( interactionSource = remember { MutableInteractionSource() }, indication = null ) { onToggleChanged(false) }, contentAlignment = Alignment.Center )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( modifier = modifier .fillMaxWidth() .height(48.dp) .background(containerColor, RoundedCornerShape(24.dp)) .padding(4.dp) // Gap between background and active pill )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( targetValue = if (!isSignUpSelected) activeTextColor else inactiveTextColor, label = "LoginTextColor" )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( targetValue = if (isSignUpSelected) activeTextColor else inactiveTextColor, label = "SignUpTextColor" )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( targetValue = if (isSignUpSelected) tabWidth else 0.dp, label = "IndicatorOffset" )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( text = "Login", color = loginTextColor, fontSize = 15.sp, fontWeight = FontWeight.Medium )</ID>
+    <ID>TrailingCommaOnCallSite:AuthToggleSwitch.kt$( text = "Sign up", color = signUpTextColor, fontSize = 15.sp, fontWeight = FontWeight.Medium )</ID>
+    <ID>TrailingCommaOnCallSite:BottomSheetDialog.kt$( modifier = Modifier.fillMaxWidth().padding(30.dp) .navigationBarsPadding(), horizontalAlignment = Alignment.CenterHorizontally )</ID>
+    <ID>TrailingCommaOnCallSite:BottomSheetDialog.kt$( onDismissRequest = {}, sheetState = sheetState, dragHandle = { BottomSheetDefaults.DragHandle()} )</ID>
+    <ID>TrailingCommaOnCallSite:BottomSheetDialog.kt$( skipPartiallyExpanded = false )</ID>
+    <ID>TrailingCommaOnCallSite:BottomSheetDialog.kt$(onClick = {}, modifier = Modifier.width(120.dp), shape = RoundedCornerShape(8.dp), border = BorderStroke(1.dp, Blue40) )</ID>
+    <ID>TrailingCommaOnCallSite:BottomSheetDialog.kt$(painterResource(R.drawable.ic_success), contentDescription = "Status", modifier = Modifier.size(120.dp))</ID>
+    <ID>TrailingCommaOnCallSite:BottomSheetDialog.kt$(text = "Done", fontSize = 14.sp, fontWeight = FontWeight.SemiBold)</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( //imageVector = Icons.Filled.ArrowBack, painter = painterResource(id = R.drawable.ic_menu_bar), contentDescription = null )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( ChatUser("sdfjasjdfjsdflj","Vijay","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Mathu","sudhakar@gmail.com","9095655761","","",""), ChatUser( "sdfjasjdfjsdflj","Tamizhan","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Baskaran","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Karthik","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Ramamoorthy","sudhakar@gmail.com","9095655761","","",""), ChatUser("sdfjasjdfjsdflj","Varatharaj","sudhakar@gmail.com","9095655761","","",""))</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( defaultElevation = 6.dp )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( focusedContainerColor = Color(0xFFFFFFFF), //unfocusedTextColor = Color(0xFFF2F2F2), disabledContainerColor = Color(0xFFFFFFFF), focusedIndicatorColor = Color(0xFFFFFFFF), unfocusedIndicatorColor = Color(0xFFFFFFFF), disabledIndicatorColor = Color(0xFFFFFFFF) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( focusedContainerColor = Color(0xFFFFFFFF), //unfocusedTextColor = Color(0xFFF2F2F2), disabledContainerColor = Color(0xFFFFFFFF), focusedIndicatorColor = Color.Transparent, unfocusedIndicatorColor = Color.Transparent, disabledIndicatorColor = Color.Transparent )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( modifier = Modifier .size(48.dp) .background(Blue40, RoundedCornerShape(30.dp)) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( modifier = Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( onClick = { viewModel.loadChatUsers(AppConfig.UID) } )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( onClick = {}, indication = null, interactionSource = remember { MutableInteractionSource() })</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( painter = painterResource(id = R.drawable.ic_signup), contentDescription = "User Image", modifier = Modifier.size(48.dp) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( text = "No chat users found.", color = MaterialTheme.colorScheme.onSurfaceVariant )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( text = chatUser.mobile!!, fontSize = 10.sp, maxLines = 2, overflow = TextOverflow.Ellipsis, lineHeight = 18.sp )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( text = state.message, color = MaterialTheme.colorScheme.error )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$( title = { Text(text = "Chats", fontSize = 20.sp, fontWeight = FontWeight.Bold) }, navigationIcon = { Box(modifier = Modifier .fillMaxHeight() .clickable( onClick = {}, indication = null, interactionSource = remember { MutableInteractionSource() }), contentAlignment = Alignment.Center) { IconButton(onClick = {}) { Icon( //imageVector = Icons.Filled.ArrowBack, painter = painterResource(id = R.drawable.ic_menu_bar), contentDescription = null ) } } } )</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$(imageVector = Icons.Default.Search, contentDescription = null)</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$(modifier = Modifier .fillMaxHeight() .clickable( onClick = {}, indication = null, interactionSource = remember { MutableInteractionSource() }), contentAlignment = Alignment.Center)</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$(modifier = Modifier .fillMaxWidth() .padding(16.dp, 12.dp) /*.clickable { navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}") }*/, verticalAlignment = Alignment.CenterVertically)</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$(text = "Chats", fontSize = 20.sp, fontWeight = FontWeight.Bold)</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$(value = searchQry, onValueChange = {search -&gt; searchQry = search }, modifier = Modifier .fillMaxWidth() .padding(12.dp), leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) }, placeholder = { Text("Search") }, shape = RoundedCornerShape(28.dp), singleLine = true, colors = TextFieldDefaults.colors( focusedContainerColor = Color(0xFFFFFFFF), //unfocusedTextColor = Color(0xFFF2F2F2), disabledContainerColor = Color(0xFFFFFFFF), focusedIndicatorColor = Color(0xFFFFFFFF), unfocusedIndicatorColor = Color(0xFFFFFFFF), disabledIndicatorColor = Color(0xFFFFFFFF) ))</ID>
+    <ID>TrailingCommaOnCallSite:ChatListScreen.kt$(value = searchQry, onValueChange = {search -&gt; searchQry = search }, modifier = Modifier .fillMaxWidth() .padding(12.dp, 8.dp), leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) }, placeholder = { Text("Search") }, shape = RoundedCornerShape(28.dp), singleLine = true, colors = TextFieldDefaults.colors( focusedContainerColor = Color(0xFFFFFFFF), //unfocusedTextColor = Color(0xFFF2F2F2), disabledContainerColor = Color(0xFFFFFFFF), focusedIndicatorColor = Color.Transparent, unfocusedIndicatorColor = Color.Transparent, disabledIndicatorColor = Color.Transparent ))</ID>
+    <ID>TrailingCommaOnCallSite:ChatRepositoryImpl.kt$ChatRepositoryImpl$( messageId = msgRef.id, senderId = senderID, receiverId = receiverID, message = message, messageType = MessageType.TEXT, timestamp = Timestamp.now(), read = false )</ID>
+    <ID>TrailingCommaOnCallSite:ChatRepositoryImpl.kt$ChatRepositoryImpl$( messageId = msgRef.id, senderId = senderId, receiverId = receiverId, message = "", messageType = MessageType.AUDIO, audioUrl = audioUrl, audioDuration = audioDuration, timestamp = Timestamp.now(), read = false )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( color = InputBg, shadowElevation = 8.dp )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( containerColor = ScreenBg, topBar = { TopAppBar( scrollBehavior = scrollBehavior, colors = TopAppBarDefaults.topAppBarColors(containerColor = TopBarBg), navigationIcon = { IconButton(onClick = { navController?.popBackStack() }) { Icon(Icons.Default.ArrowBack, contentDescription = "Back") } }, title = { Text( text = receiverName, fontWeight = FontWeight.SemiBold, fontSize = 18.sp ) }, actions = { IconButton(onClick = {}) { Icon(Icons.Default.Info, contentDescription = "Info") } } ) }, bottomBar = { ChatInputBar( value = messageText, onValueChange = { messageText = it }, onSendClick = { if (messageText.isNotBlank()) { viewModel.sendTextMessage(messageText.trim()) messageText = "" } }, onMicClick = { // Hook up your audio recorder here; on stop call: // viewModel.sendAudioMessage(uploadedUrl, "00:30") } ) } )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( duration = message.audioDuration ?: "0:00", textColor = textColor, isSent = isSentFlag, paddingValues = msgPadding )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( focusedBorderColor = Color.Transparent, unfocusedBorderColor = Color.Transparent, focusedContainerColor = Color(0xFFF5F5F5), unfocusedContainerColor = Color(0xFFF5F5F5) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( horizontalArrangement = Arrangement.spacedBy(3.dp), verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(1f) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( imageVector = Icons.Default.Add, contentDescription = "Emoji", tint = Color.White, modifier = Modifier.size(20.dp) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( imageVector = Icons.Default.Done, contentDescription = "Read", tint = if (isSentFlag) Color.White else textColor, modifier = Modifier.size(16.dp).align(Alignment.CenterVertically) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( imageVector = Icons.Default.PlayArrow, contentDescription = "Play audio", tint = if (isSent) Color.White else Color.White, modifier = Modifier.size(20.dp) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( imageVector = Icons.Default.Send, contentDescription = "Send", tint = BubbleSent, modifier = Modifier.size(28.dp) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( imageVector = if (message.read) Icons.Default.DoneAll else Icons.Default.Done, contentDescription = if (message.read) "Read" else "Sent", tint = if (message.read) Color(0xFF34B7F1) else Color.White, // blue tick style modifier = Modifier.size(18.dp).align(Alignment.CenterVertically) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( modifier = Modifier .fillMaxSize() .padding(innerPadding) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( modifier = Modifier .fillMaxWidth() .padding(horizontal = 12.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( modifier = Modifier .size(36.dp) .clip(CircleShape) .background(BubbleSent), contentAlignment = Alignment.Center )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( modifier = Modifier .size(36.dp) .clip(CircleShape) .background(if (isSent) Color.White.copy(alpha = 0.2f) else BubbleSent), contentAlignment = Alignment.Center )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( modifier = Modifier .weight(1f) .fillMaxWidth() .background(ScreenBg), contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(6.dp) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( modifier = Modifier .width(3.dp) .height(h.dp) .clip(RoundedCornerShape(2.dp)) .background(textColor.copy(alpha = 0.6f)) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( modifier = Modifier //.clip(bubbleShape) .padding(horizontal = 6.dp, vertical = 6.dp) //.background(bubbleColor) .background(bubbleColor, bubbleShape) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( modifier = Modifier.fillMaxWidth().padding( start = if (isSentFlag) 60.dp else 0.dp, end = if (isSentFlag) 0.dp else 60.dp ), horizontalAlignment = alignment )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( scrollBehavior = scrollBehavior, colors = TopAppBarDefaults.topAppBarColors(containerColor = TopBarBg), navigationIcon = { IconButton(onClick = { navController?.popBackStack() }) { Icon(Icons.Default.ArrowBack, contentDescription = "Back") } }, title = { Text( text = receiverName, fontWeight = FontWeight.SemiBold, fontSize = 18.sp ) }, actions = { IconButton(onClick = {}) { Icon(Icons.Default.Info, contentDescription = "Info") } } )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( start = if (isSentFlag) 60.dp else 0.dp, end = if (isSentFlag) 0.dp else 60.dp )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( text = label, fontSize = 12.sp, color = Color.DarkGray, textAlign = TextAlign.Center, modifier = Modifier .clip(RoundedCornerShape(12.dp)) .background(DateChipBg) .padding(horizontal = 16.dp, vertical = 4.dp) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( text = message.message, color = textColor, fontSize = 14.sp, lineHeight = 20.sp, textAlign = if (isSentFlag) TextAlign.End else TextAlign.Start, modifier = Modifier.padding(msgPadding) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( text = receiverName, fontWeight = FontWeight.SemiBold, fontSize = 18.sp )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( text = state.message, color = Color.Red, modifier = Modifier.align(Alignment.Center) )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( topStart = 14.dp, topEnd = 0.dp, bottomStart = 14.dp, bottomEnd = 14.dp )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( value = messageText, onValueChange = { messageText = it }, onSendClick = { if (messageText.isNotBlank()) { viewModel.sendTextMessage(messageText.trim()) messageText = "" } }, onMicClick = { // Hook up your audio recorder here; on stop call: // viewModel.sendAudioMessage(uploadedUrl, "00:30") } )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( value = value, onValueChange = onValueChange, placeholder = { Text("Message...", color = Color.Gray, fontSize = 14.sp) }, modifier = Modifier.weight(1f), shape = RoundedCornerShape(24.dp), colors = OutlinedTextFieldDefaults.colors( focusedBorderColor = Color.Transparent, unfocusedBorderColor = Color.Transparent, focusedContainerColor = Color(0xFFF5F5F5), unfocusedContainerColor = Color(0xFFF5F5F5) ), maxLines = 4, singleLine = false )</ID>
+    <ID>TrailingCommaOnCallSite:ChatScreen.kt$( verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(paddingValues))</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( // below line is used to add padding // to our progress bar. modifier = Modifier .size(100.dp) .padding(16.dp), // below line is used to add color // to our progress bar. color = Blue40, // below line is used to add stroke // width to our progress bar. strokeWidth = 8.dp, // below line is used to add track // color to our progress bar. trackColor = Color.LightGray, // below line is used to add strokeCap // to our progress bar. strokeCap = StrokeCap.Round )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( // we are using column to align our // imageview to center of the screen. modifier = Modifier .fillMaxSize() .background(Color.White) .alpha(0.5f), // below line is used for specifying // vertical arrangement. verticalArrangement = Arrangement.Center, // below line is used for specifying // horizontal arrangement. horizontalAlignment = Alignment.CenterHorizontally )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( dialogState, onDismiss = { route -&gt; loginViewModel.dismissDialog() // 2. Safely check flag and trigger navigation if (!route.isNullOrEmpty()) { navController?.navigate(route) { // Optional: Clear backstack so user cannot back into the dialog flow popUpTo("LoginScreen") { inclusive = true } } } })</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( imageVector = Icons.Default.Login, contentDescription = "Login", modifier = Modifier.size(ButtonDefaults.IconSize) )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( imageVector = Icons.Default.ManageAccounts, contentDescription = "Sign-Up", modifier = Modifier.size(ButtonDefaults.IconSize) )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( isSignUpSelected = authState.isSignUp, onToggleChanged = { loginViewModel.loginEvent(AuthUIEvent.SetSignUp(it)) }, modifier = Modifier.padding(top = 20.dp) )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( modifier = Modifier.fillMaxWidth(), value = authState.confirmPassword ?: "", label = "Confirm Password", onValueChange = { confirmPass -&gt; loginViewModel.registerEvent(AuthUIEvent.ConfirmPasswordChaned(confirmPass)) }, leadingIcon = Icons.Default.Password, imeAction = ImeAction.Done, keyboardActions = KeyboardActions( onDone = { focusManager.clearFocus() loginViewModel.registerEvent(AuthUIEvent.submitOnClick) } ) )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( modifier = Modifier.fillMaxWidth(), value = authState.password ?: "", label = "Password", onValueChange = { password -&gt; loginViewModel.registerEvent(AuthUIEvent.PasswordChaned(password)) }, leadingIcon = Icons.Default.Password, imeAction = if (authState.isSignUp) ImeAction.Next else ImeAction.Done, keyboardActions = KeyboardActions ( onDone = { focusManager.clearFocus() if (!authState.isSignUp)//login loginViewModel.loginEvent(AuthUIEvent.submitOnClick) } ) )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( onDone = { focusManager.clearFocus() if (!authState.isSignUp)//login loginViewModel.loginEvent(AuthUIEvent.submitOnClick) } )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( onDone = { focusManager.clearFocus() loginViewModel.registerEvent(AuthUIEvent.submitOnClick) } )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( onNext = { emailTextRequester.requestFocus() } )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( painter = painterResource(id = R.drawable.ic_account), contentDescription = "Login", modifier = Modifier .size(80.dp) .align(Alignment.CenterHorizontally) )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( shape = RoundedCornerShape(10.dp), modifier = Modifier .size(140.dp, 48.dp) .align(Alignment.CenterHorizontally), colors = ButtonDefaults.buttonColors(Blue40), onClick = { if (authState.isSignUp) { loginViewModel.registerEvent(AuthUIEvent.submitOnClick) } else { loginViewModel.loginEvent(AuthUIEvent.submitOnClick) } } )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$( value = authState.name ?: "", onValueChange = {newValue -&gt; loginViewModel.registerEvent(AuthUIEvent.NameChanged(newValue))}, label = "Name", leadingIcon = Icons.Default.Person, singleLine = true, keyboardType = KeyboardType.Text, imeAction = ImeAction.Next, capitalization = KeyboardCapitalization.Words, keyboardActions = KeyboardActions( onNext = { emailTextRequester.requestFocus() } ) )</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$(hostState = snackbarHostState, modifier = Modifier.align(Alignment.BottomCenter))</ID>
+    <ID>TrailingCommaOnCallSite:LoginScreen.kt$(it, duration = SnackbarDuration.Short)</ID>
+    <ID>TrailingCommaOnCallSite:LoginViewModel.kt$LoginViewModel$(name = state.name!!, email = state.email!!, password = state.password!!, mobile = state.mobile!!)</ID>
+    <ID>TrailingCommaOnCallSite:MainActivity.kt$( text = "Hello $name!", modifier = modifier )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$( imageVector = Icons.Default.CheckCircle, contentDescription = "Success", tint = Color(0xFF4CAF50), // Red modifier = Modifier.size(80.dp) )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$( imageVector = Icons.Default.Warning, contentDescription = "Error", tint = Color(0xFFF44336), // Red modifier = Modifier.size(80.dp) )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$( modifier = Modifier .fillMaxWidth() .padding(16.dp), shape = RoundedCornerShape(16.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface) )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$( modifier = Modifier .fillMaxWidth() .padding(24.dp), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally // Centers all children )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$( onClick = { onDismiss(null) }, colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF44336)), modifier = Modifier.fillMaxWidth(0.7f) // Fits nicely at the center bottom )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$( onClick = { onDismiss(state.destinationRoute) }, colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4CAF50)), modifier = Modifier.fillMaxWidth(0.7f) // Fits nicely at the center bottom )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$( text = "Error Occurred", style = MaterialTheme.typography.titleLarge, textAlign = TextAlign.Center )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$( text = state.errorMsg, style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth() )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$( text = state.successMsg, style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth() )</ID>
+    <ID>TrailingCommaOnCallSite:StatusDialog.kt$(DialogState.Success("Account Created Successfully"), onDismiss = { })</ID>
+    <ID>TrailingCommaOnCallSite:Theme.kt$( colorScheme = colorScheme, typography = Typography, content = content )</ID>
+    <ID>TrailingCommaOnCallSite:Theme.kt$( primary = Blue40, secondary = BlueGrey40, tertiary = SkyBlue40 /* Other default colors to override background = Color(0xFFFFFBFE), surface = Color(0xFFFFFBFE), onPrimary = Color.White, onSecondary = Color.White, onTertiary = Color.White, onBackground = Color(0xFF1C1B1F), onSurface = Color(0xFF1C1B1F), */ )</ID>
+    <ID>TrailingCommaOnCallSite:Theme.kt$( primary = Blue80, secondary = BlueGrey80, tertiary = SkyBlue80 )</ID>
+    <ID>TrailingCommaOnCallSite:Type.kt$( bodyLarge = TextStyle( fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 16.sp, lineHeight = 24.sp, letterSpacing = 0.5.sp ) /* Other default text styles to override titleLarge = TextStyle( fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 22.sp, lineHeight = 28.sp, letterSpacing = 0.sp ), labelSmall = TextStyle( fontFamily = FontFamily.Default, fontWeight = FontWeight.Medium, fontSize = 11.sp, lineHeight = 16.sp, letterSpacing = 0.5.sp ) */ )</ID>
+    <ID>TrailingCommaOnCallSite:Type.kt$( fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 16.sp, lineHeight = 24.sp, letterSpacing = 0.5.sp )</ID>
+    <ID>TrailingCommaOnDeclarationSite:AuthRepositoryImpl.kt$AuthRepositoryImpl$( email: String, password: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:AuthRepositoryImpl.kt$AuthRepositoryImpl$( name: String, email: String, password: String, mobile: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:AuthRepositoryImpl.kt$AuthRepositoryImpl$(private val firebaseAuth: FirebaseAuth, private val firestore: FirebaseFirestore)</ID>
+    <ID>TrailingCommaOnDeclarationSite:AuthToggleSwitch.kt$( isSignUpSelected: Boolean, onToggleChanged: (Boolean) -&gt; Unit, modifier: Modifier = Modifier )</ID>
+    <ID>TrailingCommaOnDeclarationSite:BottomSheetDialog.kt$(sheetState : Boolean, title : String, content : String, type : String, titleShowFlag : Boolean)</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatListScreen.kt$( viewModel : ChatListViewModel = hiltViewModel(), navController: NavController?, onUserClick: (String, String) -&gt; Unit)</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatListScreen.kt$(chatUser: ChatUser, navController: NavController?, onUserClick: (String, String) -&gt; Unit)</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatRepository.kt$ChatRepository$( chatId: String, senderId: String, receiverId: String, audioUrl: String, audioDuration: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatRepositoryImpl.kt$ChatRepositoryImpl$( chatID: String, senderID: String, receiverID: String, message: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatRepositoryImpl.kt$ChatRepositoryImpl$( chatId: String, currentUserId: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatRepositoryImpl.kt$ChatRepositoryImpl$( chatId: String, senderId: String, receiverId: String, audioUrl: String, audioDuration: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatScreen.kt$( value: String, onValueChange: (String) -&gt; Unit, onSendClick: () -&gt; Unit, onMicClick: () -&gt; Unit )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatScreen.kt$(navController : NavController?, receiverId: String, receiverName: String, viewModel: ChatViewModel = hiltViewModel() )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatUseCase.kt$MarkMessagesReadUseCase$( private val repository: ChatRepository )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatUseCase.kt$SendAudioMessageUseCase$( currentUid: String, otherUid: String, audioUrl: String, audioDuration: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatUseCase.kt$SendAudioMessageUseCase$( private val repository: ChatRepository )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatUseCase.kt$SendTextMessageUseCase$( currentUid: String, otherUid: String, message: String )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatUseCase.kt$SendTextMessageUseCase$( private val repository: ChatRepository )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatUser.kt$ChatUser$( val uid: String = "", val name: String = "", val email: String = "", val mobile: String = "", val password: String = "", val lastLogin: String? = null, val lastMsg: String? = null, var icon: String? = null )</ID>
+    <ID>TrailingCommaOnDeclarationSite:ChatViewModel.kt$ChatViewModel$(private val getChatUseCase: GetChatUseCase, private val sendTextMessageUseCase: SendTextMessageUseCase, private val sendAudioMessageUseCase: SendAudioMessageUseCase, private val markMessagesReadUseCase: MarkMessagesReadUseCase )</ID>
+    <ID>TrailingCommaOnDeclarationSite:LoginScreen.kt$(loginViewModel : LoginViewModel = hiltViewModel(), navController: NavController?)</ID>
+    <ID>TrailingCommaOnDeclarationSite:LoginState.kt$LoginState$( val name : String? = "", val email : String? = "", val password : String? = "", val confirmPassword : String? = "", val mobile : String? = "", val isSignUp : Boolean = false, val uid : String? = null, val error : String? = null, val success : Boolean = false, // API state val isLoading: Boolean = false, val successMessage: String? = null, val apiError: String? = null )</ID>
+    <ID>TrailingCommaOnDeclarationSite:LoginViewModel.kt$LoginViewModel$(private val loginUseCase: LoginUseCase, private val signUpUseCase: SignUpUseCase)</ID>
+    <ID>TrailingCommaOnDeclarationSite:Message.kt$Message$( val messageId: String = "", val senderId: String = "", val receiverId: String = "", val message: String = "", val messageType: String = MessageType.TEXT, // "text" or "audio" val audioUrl: String? = null, val audioDuration: String? = null, val timestamp: Timestamp? = null, val read: Boolean = false )</ID>
+    <ID>TrailingCommaOnDeclarationSite:StatusDialog.kt$( state: DialogState, onDismiss: (String?) -&gt; Unit )</ID>
+    <ID>TrailingCommaOnDeclarationSite:Theme.kt$( darkTheme: Boolean = isSystemInDarkTheme(), // Dynamic color is available on Android 12+ dynamicColor: Boolean = true, content: @Composable () -&gt; Unit )</ID>
+    <ID>TrailingCommaOnDeclarationSite:UserInfo.kt$UserInfo$( val uid : String, val name : String? = "", val email : String? = "", val password : String? = "", val mobile : String? = "", val icon : String? = "" )</ID>
+    <ID>UnnecessaryParenthesesBeforeTrailingLambda:ChatListScreen.kt$()</ID>
+    <ID>UnnecessaryParenthesesBeforeTrailingLambda:ChatScreen.kt$()</ID>
+    <ID>UnnecessaryParenthesesBeforeTrailingLambda:MainActivity.kt$MainActivity$()</ID>
+    <ID>UnusedImports:AppTextField.kt$import androidx.compose.foundation.interaction.MutableInteractionSource</ID>
+    <ID>UnusedImports:AppTextField.kt$import androidx.compose.ui.graphics.Color</ID>
+    <ID>UnusedImports:BottomSheetDialog.kt$import androidx.compose.foundation.shape.CornerSize</ID>
+    <ID>UnusedImports:BottomSheetDialog.kt$import androidx.compose.material3.ButtonDefaults</ID>
+    <ID>UnusedImports:BottomSheetDialog.kt$import androidx.compose.ui.graphics.Color</ID>
+    <ID>UnusedImports:BottomSheetDialog.kt$import com.sk.chatmaster.ui.theme.Blue80</ID>
+    <ID>UnusedImports:ChatListViewModel.kt$import com.sk.chatmaster.data.model.UserInfo</ID>
+    <ID>UnusedImports:ChatScreen.kt$import androidx.compose.material.icons.filled.Mic</ID>
+    <ID>UnusedImports:ChatScreen.kt$import androidx.compose.material.icons.filled.SentimentSatisfied</ID>
+    <ID>UnusedImports:CustomOutlinedTextField.kt$import androidx.compose.runtime.Composable</ID>
+    <ID>UnusedImports:DialogState.kt$import android.app.Dialog</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.foundation.layout.height</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.foundation.layout.navigationBarsPadding</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.foundation.layout.width</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.material3.BottomSheetDefaults</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.material3.ExperimentalMaterial3Api</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.material3.ModalBottomSheet</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.material3.SheetState</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.material3.rememberModalBottomSheetState</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.ui.text.font.Font</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.ui.text.font.FontStyle</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.ui.text.font.FontWeight</ID>
+    <ID>UnusedImports:LoginScreen.kt$import androidx.compose.ui.unit.sp</ID>
+    <ID>UnusedImports:LoginScreen.kt$import com.sk.chatmaster.ui.widget.BottomSheetDialog</ID>
+    <ID>UnusedImports:MainActivity.kt$import androidx.activity.enableEdgeToEdge</ID>
+    <ID>UnusedImports:MainActivity.kt$import androidx.compose.foundation.layout.padding</ID>
+    <ID>UnusedImports:StatusDialog.kt$import android.net.http.UrlRequest</ID>
+    <ID>UnusedImports:StatusDialog.kt$import androidx.compose.material3.AlertDialog</ID>
+    <ID>UnusedImports:Theme.kt$import android.app.Activity</ID>
+    <ID>UnusedParameter:BottomSheetDialog.kt$type : String</ID>
+    <ID>UnusedParameter:ChatListScreen.kt$navController: NavController?</ID>
+    <ID>UnusedParameter:ChatScreen.kt$onMicClick: () -&gt; Unit</ID>
+    <ID>UnusedPrivateMember:AppTextField.kt$@Preview(showBackground = true, name = "All AppOutlinedTextField variants") @Composable private fun AppOutlinedTextFieldPreview()</ID>
+    <ID>UnusedPrivateProperty:BottomSheetDialog.kt$val showBottomSheetState by remember { mutableStateOf(sheetState) }</ID>
+    <ID>UnusedPrivateProperty:ChatListScreen.kt$private val toolBarBackground = Color(0xFF5B4FE9)</ID>
+    <ID>UnusedPrivateProperty:ChatListScreen.kt$private val toolBarTitleColor = Color(0xFF5B4FE9)</ID>
+    <ID>UnusedPrivateProperty:ChatScreen.kt$private val TimeColor = Color(0xFF9E9E9E)</ID>
+    <ID>UnusedPrivateProperty:LoginScreen.kt$var emailText by remember { mutableStateOf("") }</ID>
+    <ID>UnusedPrivateProperty:LoginScreen.kt$var mobileNumText by remember { mutableStateOf("") }</ID>
+    <ID>UnusedPrivateProperty:LoginScreen.kt$var nameText by remember { mutableStateOf("") }</ID>
+    <ID>UnusedPrivateProperty:LoginScreen.kt$var passwordText by remember { mutableStateOf("") }</ID>
+    <ID>UtilityClassWithPublicConstructor:AppConfig.kt$AppConfig</ID>
+    <ID>VariableNaming:ChatListViewModel.kt$ChatListViewModel$val _chatListState = MutableStateFlow&lt;ChatUserListUiState&gt;(ChatUserListUiState.Loading)</ID>
+    <ID>Wrapping:AppTextField.kt${ Text(text = it) }</ID>
+    <ID>Wrapping:AuthRepositoryImpl.kt$AuthRepositoryImpl$(</ID>
+    <ID>Wrapping:BottomSheetDialog.kt$(</ID>
+    <ID>Wrapping:ChatListScreen.kt$(</ID>
+    <ID>Wrapping:ChatListScreen.kt$onUserClick(chatUser.uid,chatUser.name) //navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}")</ID>
+    <ID>Wrapping:ChatRepository.kt$ChatRepository$(</ID>
+    <ID>Wrapping:ChatScreen.kt$(</ID>
+    <ID>Wrapping:ChatViewModel.kt$ChatViewModel$(</ID>
+    <ID>Wrapping:LoginScreen.kt$(</ID>
+    <ID>Wrapping:LoginViewModel.kt$LoginViewModel$(</ID>
+    <ID>Wrapping:LoginViewModel.kt$LoginViewModel$-&gt;</ID>
+    <ID>Wrapping:StatusDialog.kt$(</ID>
+  </CurrentIssues>
+</SmellBaseline>

@@ -1,6 +1,5 @@
 package com.sk.chatmaster.ui.widget
 
-import android.net.http.UrlRequest
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -12,7 +11,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Warning
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -179,7 +177,7 @@ fun StatusDialog(
 
 @Preview(showBackground = true)
 @Composable
-fun showDialog() {
+fun ShowDialog() {
     StatusDialog(DialogState.Success("Account Created Successfully"),
         onDismiss = {
 

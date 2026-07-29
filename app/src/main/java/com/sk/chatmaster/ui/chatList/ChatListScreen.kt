@@ -66,10 +66,11 @@ private val toolBarTitleColor = Color(0xFF5B4FE9)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ChatListScreen(
+    viewModel : ChatListViewModel = hiltViewModel(),
     navController: NavController?,
     onUserClick: (String, String) -> Unit) {
     val context = LocalContext.current
-    val viewModel : ChatListViewModel = hiltViewModel()
+    //val viewModel : ChatListViewModel = hiltViewModel()
     val uiState by viewModel._chatListState.collectAsState()
     /*var userList = listOf<ChatUser>(ChatUser(chatUserID = "sdfjasjdfjsdflj", "Sudhakar","sudhakar@gmail.com","9095655761","","",""),
         ChatUser("sdfjasjdfjsdflj","Vijay","sudhakar@gmail.com","9095655761","","",""),
@@ -193,7 +194,7 @@ fun ChatListScreen(
                             ) {
                                 items(filteredUsers) { chat ->
                                     //chatItem(chat,onClick = { onUserClick(chat.uid,chat.name) })
-                                    chatItem(chat,navController,onUserClick = onUserClick)
+                                    ChatItem(chat,navController,onUserClick = onUserClick)
                                 }
                             }
                         }
@@ -211,7 +212,7 @@ fun ChatListScreen(
 }
 
 @Composable
-fun chatItem(chatUser: ChatUser, navController: NavController?,
+fun ChatItem(chatUser: ChatUser, navController: NavController?,
              onUserClick: (String, String) -> Unit) {
     Card(modifier = Modifier
         .fillMaxWidth()
@@ -294,7 +295,7 @@ fun chatItem(chatUser: ChatUser, navController: NavController?,
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview(showBackground = true)
 @Composable
-fun showPreview() {
+fun ShowPreview() {
     var userList = listOf<ChatUser>(
         ChatUser("sdfjasjdfjsdflj","Vijay","sudhakar@gmail.com","9095655761","","",""),
         ChatUser("sdfjasjdfjsdflj","Mathu","sudhakar@gmail.com","9095655761","","",""),
@@ -342,7 +343,7 @@ fun showPreview() {
             contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
         ) {
             items(filterList) { chat ->
-                chatItem(chat,null, { receiverId,receiverName ->  })
+                ChatItem(chat,null, { receiverId, receiverName ->  })
             }
         }
     }

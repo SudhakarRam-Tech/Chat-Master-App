@@ -77,8 +77,8 @@ import com.sk.chatmaster.ui.widget.StatusDialog
 
 val containerColor = Color(0xFFFFFFFF) // Dark gray track
 @Composable
-fun LoginScreen(navController: NavController?) {
-    val loginViewModel : LoginViewModel = hiltViewModel()
+fun LoginScreen(loginViewModel : LoginViewModel = hiltViewModel(),
+                navController: NavController?) {
     val authState by loginViewModel.loginState.collectAsState()
     val dialogState by loginViewModel.dialogState.collectAsStateWithLifecycle()
 
@@ -317,5 +317,5 @@ fun CircularProgressComponent() {
 @Preview(showBackground = true)
 @Composable
 fun LoginPreview() {
-    LoginScreen(null)
+    LoginScreen(navController = null)
 }

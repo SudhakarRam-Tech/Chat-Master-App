@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.ktlint)
+    alias(libs.plugins.detekt)
+
 }
 
 android {
@@ -91,6 +93,11 @@ dependencies {
     // Kotlin Coroutines
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
+
+    detektPlugins(libs.detekt.formatting)
+    detektPlugins(libs.detekt.rules.libraries)
+    detektPlugins(libs.detekt)
+
 }
 
 ktlint {
@@ -109,5 +116,33 @@ ktlint {
     filter {
         exclude("**/generated/**")
         exclude("**/build/**")
+    }
+}
+detekt {
+
+    toolVersion = "1.23.7"
+    parallel = true
+    config.setFrom(files("$projectDir/../detekt-config.yml"))
+    baseline = file("$projectDir/detekt-baseline.xml")
+    allRules = false
+    ignoreFailures = false
+    buildUponDefaultConfig = true
+}
+
+tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
+    jvmTarget = "11"
+
+    include("**/*.kt", "**/*.kts")
+    exclude(
+        "**/build/**",
+        "**/generated/**",
+        "**/resources/**"
+    )
+
+    reports {
+        html.required.set(true)
+        xml.required.set(true)
+        sarif.required.set(true)
+        md.required.set(true)
     }
 }

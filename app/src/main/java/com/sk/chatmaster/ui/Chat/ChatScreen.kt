@@ -187,7 +187,10 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
     val bubbleColor = if (isSentFlag) BubbleSent else BubbleReceived
     val textColor    = if (isSentFlag) Color.White else Color.Black
     val bubbleShape = if (isSentFlag) RoundedCornerShape(
-        topStart = 14.dp, topEnd = 0.dp,   bottomStart = 14.dp, bottomEnd = 14.dp
+        topStart = 14.dp,
+        topEnd = 0.dp,
+        bottomStart = 14.dp,
+        bottomEnd = 14.dp
     )
     else
         RoundedCornerShape(topStart = 0.dp,  topEnd = 14.dp,  bottomStart = 14.dp, bottomEnd = 14.dp)
@@ -200,13 +203,14 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
         PaddingValues(start = 1.dp,top = 1.dp,end = 10.dp, bottom = 5.dp)
 
     Column(
-        modifier            = Modifier.fillMaxWidth().padding(
+        modifier = Modifier.fillMaxWidth().padding(
             start = if (isSentFlag) 60.dp else 0.dp,
             end = if (isSentFlag) 0.dp else 60.dp
         ),
         horizontalAlignment = alignment
     ) {
-        Column (modifier = Modifier
+        Column (
+            modifier = Modifier
             //.clip(bubbleShape)
             .padding(horizontal = 6.dp, vertical = 6.dp)
             //.background(bubbleColor)
@@ -265,7 +269,8 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
 }
 @Composable
 private fun AudioBubble(duration: String, textColor: Color, isSent: Boolean, paddingValues: PaddingValues) {
-    Row(verticalAlignment = Alignment.CenterVertically,
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.padding(paddingValues)) {
         // Play button
         Box(
@@ -310,7 +315,8 @@ private fun AudioBubble(duration: String, textColor: Color, isSent: Boolean, pad
 @Preview(showBackground = true)
 @Composable
 fun showPreview() {
-    val messages = listOf(Message("sdfasdf","123","321",message = "Hi Mathu", messageType = MessageType.TEXT, read = true),
+    val messages = listOf(
+        Message("sdfasdf","123","321",message = "Hi Mathu", messageType = MessageType.TEXT, read = true),
         Message("gsdf","321","123",message = "Hello Sudhakar", messageType = MessageType.TEXT, read = true),
                 Message("dffgg","123","321",message = "Have you made any plans for the weekend dsfasfd asfasdf sdfasf dfadsf?", messageType = MessageType.TEXT, read = true),
         Message("llj","321","123",message = "Tell me the timing", messageType = MessageType.TEXT, read = true),
