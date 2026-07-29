@@ -1,6 +1,7 @@
 package com.sk.chatmaster.ui.chatList
 
-import android.widget.Space
+import android.app.Activity
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -22,7 +23,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -33,9 +33,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -47,6 +45,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -59,8 +58,6 @@ import androidx.navigation.NavController
 import com.sk.chatmaster.R
 import com.sk.chatmaster.core.common.AppConfig
 import com.sk.chatmaster.data.model.ChatUser
-import com.sk.chatmaster.navigation.Route
-import com.sk.chatmaster.ui.Chat.ChatScreen
 import com.sk.chatmaster.ui.Login.CircularProgressComponent
 import com.sk.chatmaster.ui.theme.Blue40
 
@@ -68,8 +65,10 @@ private val toolBarBackground = Color(0xFF5B4FE9)
 private val toolBarTitleColor = Color(0xFF5B4FE9)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChatListScreen(navController: NavController?,
-                   /*onUserClick : (receiverID: String,receiverName : String)-> Unit = { _, _ -> },*/) {
+fun ChatListScreen(
+    navController: NavController?,
+    onUserClick: (String, String) -> Unit) {
+    val context = LocalContext.current
     val viewModel : ChatListViewModel = hiltViewModel()
     val uiState by viewModel._chatListState.collectAsState()
     /*var userList = listOf<ChatUser>(ChatUser(chatUserID = "sdfjasjdfjsdflj", "Sudhakar","sudhakar@gmail.com","9095655761","","",""),
@@ -166,7 +165,9 @@ fun ChatListScreen(navController: NavController?,
                                 onValueChange = {search ->
                                     searchQry = search
                                 },
-                                modifier = Modifier.fillMaxWidth().padding(12.dp,8.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(12.dp, 8.dp),
                                 leadingIcon = {
                                     Icon(imageVector = Icons.Default.Search,
                                         contentDescription = null)
@@ -192,9 +193,7 @@ fun ChatListScreen(navController: NavController?,
                             ) {
                                 items(filteredUsers) { chat ->
                                     //chatItem(chat,onClick = { onUserClick(chat.uid,chat.name) })
-                                    chatItem(chat,navController/*,onClick = {
-                                    navController?.navigate(ChatScreen(navController,
-                                    AppConfig.UID,chat.uid,chat.name)) }*/)
+                                    chatItem(chat,navController,onUserClick = onUserClick)
                                 }
                             }
                         }
@@ -203,12 +202,22 @@ fun ChatListScreen(navController: NavController?,
             }
         }
     }
+
+
+    BackHandler(enabled = true) {
+
+        (context as Activity)?.finishAffinity()
+    }
 }
 
 @Composable
-fun chatItem(chatUser: ChatUser/*, onClick: () -> Unit = {}*/,navController: NavController?) {
-    Card(modifier = Modifier.fillMaxWidth()
-        .clickable { navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}") },
+fun chatItem(chatUser: ChatUser, navController: NavController?,
+             onUserClick: (String, String) -> Unit) {
+    Card(modifier = Modifier
+        .fillMaxWidth()
+        .clickable { onUserClick(chatUser.uid,chatUser.name)
+                    //navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}")
+                   },
         elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp
         ),
@@ -216,8 +225,10 @@ fun chatItem(chatUser: ChatUser/*, onClick: () -> Unit = {}*/,navController: Nav
             containerColor = Color.White,
         ),
     ) {
-        Row(modifier = Modifier.fillMaxWidth().padding(16.dp,12.dp)
-            .clickable { navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}") },
+        Row(modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp, 12.dp)
+            /*.clickable { navController?.navigate("ChatScreen/${chatUser.uid}/${chatUser.name}") }*/,
             verticalAlignment = Alignment.CenterVertically) {
             if (chatUser.icon.isNullOrEmpty()) {
                 Box(
@@ -244,7 +255,7 @@ fun chatItem(chatUser: ChatUser/*, onClick: () -> Unit = {}*/,navController: Nav
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = chatUser.name!!,
-                    fontSize = 14.sp,
+                    fontSize = 16.sp,
                     fontWeight = FontWeight.SemiBold,
                 )
                 Spacer(modifier = Modifier.height(4.dp))
@@ -279,6 +290,7 @@ fun chatItem(chatUser: ChatUser/*, onClick: () -> Unit = {}*/,navController: Nav
     }
 }
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview(showBackground = true)
 @Composable
@@ -291,13 +303,16 @@ fun showPreview() {
         ChatUser("sdfjasjdfjsdflj","Karthik","sudhakar@gmail.com","9095655761","","",""),
         ChatUser("sdfjasjdfjsdflj","Ramamoorthy","sudhakar@gmail.com","9095655761","","",""),
         ChatUser("sdfjasjdfjsdflj","Varatharaj","sudhakar@gmail.com","9095655761","","",""))
+
     Column() {
         var searchQry by remember { mutableStateOf("") }
         OutlinedTextField(value = searchQry,
             onValueChange = {search ->
                 searchQry = search
             },
-            modifier = Modifier.fillMaxWidth().padding(12.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
             leadingIcon = {
                 Icon(imageVector = Icons.Default.Search,
                     contentDescription = null)
@@ -319,15 +334,16 @@ fun showPreview() {
         val filterList = userList.filter { user ->
             user.name.contains(searchQry, ignoreCase = true)
         }
+
         LazyColumn(Modifier
-            .fillMaxSize().padding(8.dp),
+            .fillMaxSize()
+            .padding(8.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
         ) {
             items(filterList) { chat ->
-                chatItem(chat,null)
+                chatItem(chat,null, { receiverId,receiverName ->  })
             }
         }
     }
-    //ChatListScreen(null)
 }

@@ -19,6 +19,7 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.material.icons.filled.DoneAll
@@ -26,6 +27,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Send
+import androidx.compose.material.icons.filled.SentimentSatisfied
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -189,16 +191,19 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
     )
     else
         RoundedCornerShape(topStart = 0.dp,  topEnd = 14.dp,  bottomStart = 14.dp, bottomEnd = 14.dp)
-    val msgPadding = if (isSentFlag) PaddingValues(start = 10.dp,top = 5.dp,end = 10.dp, bottom = 2.dp)
+    val msgPadding = if (isSentFlag) PaddingValues(start = 10.dp,top = 5.dp,end = 10.dp, bottom = 0.dp)
         else
-            PaddingValues(start = 10.dp,top = 5.dp,end = 10.dp, bottom = 2.dp)
+            PaddingValues(start = 10.dp,top = 5.dp,end = 10.dp, bottom = 0.dp)
 
-    val readTimePadding = if (isSentFlag) PaddingValues(start = 3.dp,top = 3.dp,end = 10.dp, bottom = 5.dp)
+    val readTimePadding = if (isSentFlag) PaddingValues(start = 1.dp,top = 1.dp,end = 10.dp, bottom = 5.dp)
     else
-        PaddingValues(start = 3.dp,top = 3.dp,end = 10.dp, bottom = 5.dp)
+        PaddingValues(start = 1.dp,top = 1.dp,end = 10.dp, bottom = 5.dp)
 
     Column(
-        modifier            = Modifier.fillMaxWidth(),
+        modifier            = Modifier.fillMaxWidth().padding(
+            start = if (isSentFlag) 60.dp else 0.dp,
+            end = if (isSentFlag) 0.dp else 60.dp
+        ),
         horizontalAlignment = alignment
     ) {
         Column (modifier = Modifier
@@ -215,6 +220,7 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
                         color     = textColor,
                         fontSize  = 14.sp,
                         lineHeight = 20.sp,
+                        textAlign = if (isSentFlag) TextAlign.End else TextAlign.Start,
                         modifier = Modifier.padding(msgPadding)
                     )
                 else -> {
@@ -231,10 +237,10 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
                 Text(
                     text      = message.timestamp?.toDate()?.let {
                         SimpleDateFormat("h:mm a", Locale.getDefault()).format(it)
-                    } ?: "",
+                    } ?: "10:30 am",
                     color     = textColor,
                     fontSize  = 10.sp,
-                    modifier = Modifier.padding(3.dp,0.dp)
+                    modifier = Modifier.padding(3.dp,0.dp).align(Alignment.CenterVertically),
                 )
                 Spacer(Modifier.width(5.dp))
                 if (isSentFlag && message.read) {
@@ -242,14 +248,14 @@ fun MessageBubble(message: Message, isSentFlag : Boolean) {
                         imageVector = if (message.read) Icons.Default.DoneAll else Icons.Default.Done,
                         contentDescription = if (message.read) "Read" else "Sent",
                         tint = if (message.read) Color(0xFF34B7F1) else Color.White, // blue tick style
-                        modifier = Modifier.size(18.dp)
+                        modifier = Modifier.size(18.dp).align(Alignment.CenterVertically)
                     )
                 } else {
                     Icon(
                         imageVector        = Icons.Default.Done,
                         contentDescription = "Read",
                         tint               = if (isSentFlag) Color.White else textColor,
-                        modifier           = Modifier.size(14.dp)
+                        modifier           = Modifier.size(16.dp).align(Alignment.CenterVertically)
                     )
                 }
             }
@@ -306,7 +312,7 @@ private fun AudioBubble(duration: String, textColor: Color, isSent: Boolean, pad
 fun showPreview() {
     val messages = listOf(Message("sdfasdf","123","321",message = "Hi Mathu", messageType = MessageType.TEXT, read = true),
         Message("gsdf","321","123",message = "Hello Sudhakar", messageType = MessageType.TEXT, read = true),
-                Message("dffgg","123","321",message = "Today We have a meeting", messageType = MessageType.TEXT, read = true),
+                Message("dffgg","123","321",message = "Have you made any plans for the weekend dsfasfd asfasdf sdfasf dfadsf?", messageType = MessageType.TEXT, read = true),
         Message("llj","321","123",message = "Tell me the timing", messageType = MessageType.TEXT, read = true),
         Message("eoiut","123","321",message = "Around 10 PM", messageType = MessageType.TEXT, read = true),
         Message("eoiut","123","321", audioUrl = "Textsdfasdfasdfasdsdf",audioDuration = "2 Mins", messageType = MessageType.AUDIO, read = true),)
@@ -379,7 +385,7 @@ private fun ChatInputBar(
             verticalAlignment = Alignment.CenterVertically
         ) {
             // Add attachment button
-            /*Box(
+            Box(
                 modifier         = Modifier
                     .size(36.dp)
                     .clip(CircleShape)
@@ -387,14 +393,14 @@ private fun ChatInputBar(
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
-                    imageVector        = Icons.Default.SentimentSatisfied,
+                    imageVector        = Icons.Default.Add,
                     contentDescription = "Emoji",
                     tint               = Color.White,
                     modifier           = Modifier.size(20.dp)
                 )
             }
 
-            Spacer(Modifier.width(8.dp))*/
+            Spacer(Modifier.width(8.dp))
 
             OutlinedTextField(
                 value         = value,
@@ -415,7 +421,7 @@ private fun ChatInputBar(
             Spacer(Modifier.width(8.dp))
 
             // Send or Mic button — swaps based on text content
-            if (value.isNotBlank()) {
+            //if (value.isNotBlank()) {
                 IconButton (onClick = onSendClick) {
                     Icon(
                         imageVector        = Icons.Default.Send,
@@ -424,16 +430,16 @@ private fun ChatInputBar(
                         modifier           = Modifier.size(28.dp)
                     )
                 }
-            } else {
+            /*} else {
                 IconButton(onClick = onMicClick) {
                     Icon(
-                        imageVector        = Icons.Default.Mic,
+                        imageVector        = Icons.Default.Mic,//Icons.Default.Mic
                         contentDescription = "Voice message",
                         tint               = BubbleSent,
                         modifier           = Modifier.size(28.dp)
                     )
                 }
-            }
+            }*/
         }
     }
 }

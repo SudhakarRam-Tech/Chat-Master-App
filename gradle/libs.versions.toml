@@ -17,6 +17,7 @@ hilt = "2.59"
 hiltCompose = "1.2.0"
 lifecycleViewmodel = "2.9.2"
 coroutine = "1.8.1"
+ktlintVer = "12.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -60,3 +61,5 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "devtoolsKsp"}
+#this is for linting kotlin code
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintVer"}
